@@ -1,50 +1,49 @@
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Single:wght@100..900&display=swap');
 
-* {
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Single:wght@100..900&display=swap');
+  * {
+      background-color: #60c12851;
+  }
 
+  h1 {
+      background-color: rgb(187, 173, 186);
+      text-shadow: 2px 2px 5px maroon;
+      font-family: "Bitcount Grid Single", system-ui;
+      -webkit-text-fill-color: rgb(40, 242, 242);
+  }
 
-    background-color: #46b10c51;
-}
+  h2 {
+      background-color: chocolate;
+       -webkit-text-fill-color: aqua;
 
-h1 {
-    background-color: rgb(38, 36, 174);
-    text-shadow: 2px 2px 5px maroon;
-     font-family: "Bitcount Grid Single", system-ui;
-}
+  }
 
-p {
-    background-color: chocolate;
-    
-}
+  p {
+      background-color: gold;
+  }
 
-.A {
-    background-color: gold;
-}
+  #paral {
+      background-color: palevioletred;
+  }
 
-#paral {
-    background-color: palevioletred;
-}
+  #B {
+      background-color: cyan;
 
-#B {
-    background-color: cyan;
-    
-}
+  }
 
-h2 {
-    
-    background: linear-gradient(90deg, green 0%, black 5%, red 10%, skyblue 90%);
-      
-}
+  h2 {
 
-.A {
+      background: linear-gradient(90deg, green 0%, black 5%, red 10%, skyblue 90%);
 
-    @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+  }
 
-}
+  .A {
 
-h1,
-div {
-    border: 7px  double black;
-    height: 500 px;
-}
+      @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap');
+
+  }
+
+  h1,
+  div {
+      border: 7px double black;
+      height: 500 px;
+  }

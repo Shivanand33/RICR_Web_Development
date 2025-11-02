@@ -1,12 +1,12 @@
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Single:wght@100..900&display=swap');
 
   * {
-      background-color: #60c12851;
+      background-color: #da2d5851;
   }
 
   h1 {
-      background-color: rgb(187, 173, 186);
-      text-shadow: 2px 2px 5px maroon;
+      background-color: rgb(33, 29, 33);
+      text-shadow: 100px 2px 5px maroon;
       font-family: "Bitcount Grid Single", system-ui;
       -webkit-text-fill-color: rgb(40, 242, 242);
   }

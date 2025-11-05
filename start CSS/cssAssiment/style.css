@@ -7,12 +7,12 @@
      height: 100vh;
  }
 
- .one {
+ /* .one {
 
      display: flex;
      gap: 50px; 
 
- }
+ } */
 
  .box1 {
      background: white;
@@ -21,6 +21,7 @@
      width: 300px;
      height: 300px;
      margin: 150px auto;
+     margin-left: 500px;
      margin-bottom: 10px;
      
  }
@@ -101,21 +102,7 @@
      font-size: 14px;
 
  }
-
- .box2 {
-     background: #ffffff;
-     padding: 30px 40px;
-     padding: 10px auto;
-     border-radius: 10px;
-    
-     width: 320px;
-     margin-bottom: 10cqb;
-     box-sizing: border-box;
+ .box1 h2 span{
+     border-bottom: 1px solid blue;
+     width: fit-content;
  }
-
- .box2 h2 {
-     font-size: 1.5rem;
-     color: #333;
-     margin-bottom: 20px;
- }
-  

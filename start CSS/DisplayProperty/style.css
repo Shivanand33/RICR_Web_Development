@@ -1,0 +1,13 @@
+#d1{
+    width: 300px;
+     height: 200px;
+     border: 1px solid black;
+     display: inline-block;
+} 
+
+#d2{
+     width: 300px;
+     height: 200px;
+     border: 1px solid black;
+     display: inline-block;
+}

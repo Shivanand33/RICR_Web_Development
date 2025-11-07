@@ -3,12 +3,10 @@
   }
  h1{
      margin-top: 0px;
-     margin-left:2000px;
-    font-size:200px;
+     margin-left:100px;
+    font-size:100px;
      background: linear-gradient(90deg, rgb(126, 206, 126) 0, rgb(205, 152, 152) 5%, red 10%, skyblue 90%);
      
 }
-img{
-  margin-bottom: 100px;
-}
+ 
   

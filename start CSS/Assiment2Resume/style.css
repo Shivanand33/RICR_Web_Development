@@ -1,0 +1,88 @@
+#mainBox{
+   display: flex;
+}
+#Box1{
+    background-color: rgb(29, 39, 77);
+     width: 270px;
+     height: 1500px;
+      color: rgb(220, 231, 241);
+       
+      
+     
+      
+     }
+     .sub-box{
+        margin-left: 10px;
+        
+     }
+       /* .pp{
+        margin-right: 20px;
+       } */
+
+.mypic{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+  .one{
+    margin-left: 10px;
+  }
+#Box2{
+    background-color: whitesmoke;
+    width: 700px;
+    height: 1500px;
+   
+  
+    
+}
+.two{
+    margin-left: 10px;
+}
+ 
+
+ 
+.item{
+    display: flex;
+    
+    
+}
+.position{
+    margin-left: 30%;
+    margin-top: 50PX;
+}
+.po-two{
+ margin-left: 31%;
+ /* margin-top: 10PX; */
+}
+
+.po-three{
+ margin-left: 29%;
+ /* margin-top: 10PX; */
+}
+
+.computer{
+     margin-left: 27%;
+     margin-top: 50px;
+}
+ 
+.science{
+    margin-left: 30%;
+    margin-top: 8px;
+}
+
+.science2{
+    margin-left: 32%;
+}
+
+.em-month{
+    margin-left: 10%;
+    margin-top: 50px;
+}
+ 
+ 
+.cp-comptition{
+    margin-left: 30%;
+
+}

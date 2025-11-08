@@ -1,20 +1,41 @@
+
+ 
+
 #mainBox{
    display: flex;
 }
-#Box1{
+.Box1{
     background-color: rgb(29, 39, 77);
-     width: 270px;
+     width: 300px;
      height: 1500px;
       color: rgb(220, 231, 241);
+       
+
+     
+      
        
       
      
       
      }
+     
      .sub-box{
-        margin-left: 10px;
+        margin-left: 20px;
+         
+        h5{
+            color: rgb(208, 208, 20);
+            outline: white;
+            margin-left: 40px;
+  
+           
+        }
+          
         
      }
+       hr{
+                 margin-right: 20px;
+                /* color:red; */
+            }
        /* .pp{
         margin-right: 20px;
        } */
@@ -23,11 +44,14 @@
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    margin-left: 10%;
+    margin-left: 15%;
     margin-top: 10%;
 }
   .one{
     margin-left: 10px;
+    h2{
+        color:rgb(49, 49, 114);
+    }
   }
 #Box2{
     background-color: whitesmoke;
@@ -45,9 +69,19 @@
  
 .item{
     display: flex;
+     h2{
+        color:rgb(49, 49, 114);
+    }
+     
+   h3{
+    color:rgb(72, 170, 209);
+   }
+   
     
     
 }
+ 
+
 .position{
     margin-left: 30%;
     margin-top: 50PX;
@@ -85,4 +119,7 @@
 .cp-comptition{
     margin-left: 30%;
 
+}
+.softwere{
+    margin-left: 50px; 
 }

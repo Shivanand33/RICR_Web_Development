@@ -1,0 +1,179 @@
+#navbar {
+    background-color: whitesmoke;
+   justify-content: space-between;
+    display: flex;
+    align-items: center;
+   
+width: 100%;
+    position: fixed;
+top: 0%;
+}
+
+ h2 {
+        margin-left: 5%;
+    }
+
+
+.button2 {
+    /* margin-left: 20%; */
+    margin-right: 80px;
+
+    .singbutton {
+
+        background-color: white;
+        /* outline: white; */
+
+        border-color: whitesmoke;
+
+        padding: 10px;
+        border-radius: 10px;
+
+
+
+    }
+
+    .blockbutton {
+        padding: 10px;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+
+
+    }
+}
+
+.blockbutton:active {
+    color: bisque;
+}
+
+.main {
+
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+
+}
+
+.image {
+    /* width: 0%; */
+
+
+    img {
+        width: 80%;
+        margin-top: 10%;
+        border-radius: 10px;
+        margin-left: 10%;
+    }
+}
+
+.heading {
+    /* width: 10px; */
+    margin-left: 5%;
+
+    .one {
+
+        font-size: 4cqmax;
+
+
+    }
+
+    p {
+
+        color: rgb(134, 133, 133);
+    }
+
+    .email {
+        width: 40%;
+        padding: 10px;
+    }
+
+    .offer {
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+
+
+    }
+
+    .offer:hover {
+        color: rgb(14, 156, 54);
+    }
+
+}
+
+.my{
+
+     display: flex;
+     margin-top: 13%;
+     margin-left: 10%;
+      
+    img{
+        width: 200px;
+    }
+   
+    
+     
+}
+.client{
+    h3{
+        margin-left: 40%;
+    }
+}
+
+.skill{
+   margin-left: 30%;
+   .one{
+     font-size: 4cqmax;
+     margin-left: 12%;
+    
+   }
+   .item{
+    font-size: large;
+     margin-right: 10%;
+   }
+   h4{
+    margin-left: 18%;
+   }
+
+  
+
+}
+.item1{
+    margin-left: 10%;
+    font-size: large;
+    color: rgb(134, 133, 133);
+    .item2{
+        margin-left: 30%;
+    }
+}
+.mainskill{
+    padding-top: 8%;
+}
+.headallicon{
+     padding-top: 8%;
+     /* display: flex; */
+     display: grid;
+     gap: 10%;
+      margin-left: 10%;
+     grid-template-columns: auto auto auto;
+}
+    
+ .allicons{
+    
+    /* border: 2px solid black; */
+    width: 300px;
+ }
+
+ .icons{
+    text-align: center;
+    color: rgb(134, 133, 133);
+ }
+ .iconn{
+    text-align: center;
+ }
+ .icon2{
+    text-align: center;
+ }
+ 
+ 

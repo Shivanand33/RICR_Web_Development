@@ -21,7 +21,7 @@ h1:hover {
      /* color: blue; */
 
     .tt {
-    width: 0%;
+    width: 5%;
     height: 100px;
     
     background-color: red;
@@ -32,7 +32,7 @@ h1:hover {
 
 .ss:hover {
     .tt{
-        width: 100px;
+        width: 500px;
         /* height: 200px */
         /* transition: 1s ; */
         background-color: aqua;
@@ -45,7 +45,7 @@ border: 1px solid #ff0000;
   position: relative;
 }
 
-#d1 {
+.d1 {
   background: white;
   position: absolute;
   overflow: hidden;
@@ -54,8 +54,8 @@ border: 1px solid #ff0000;
   height: 0px;
 }
 
-#D1:hover {
-  #d1 {
+.D1:hover {
+  .d1 {
     background: white;
     position: absolute;
 
@@ -84,20 +84,20 @@ border: 1px solid #ff0000;
 }
 @keyframes myAnimantion {
     0%{
-        width: 0%;
+        width: 0px;
         background-color: red;
     }
     50%{
-        width: 50%;
+        width: 50px;
         background-color: yellow;
     }
     100%{
-        width: 100%;
+        width: 100px;
         background-color: green;
     }
 }
 
-#d2{
+.d2{
     width: 100px;
     height: 50px;
     font-size: xx-large;
@@ -107,7 +107,7 @@ border: 1px solid #ff0000;
 transform: rotate(180deg); */
 
 }
-#d2:hover{
+.d2:hover{
   transform: rotate(180deg);
   transition: transform 5s;
 }

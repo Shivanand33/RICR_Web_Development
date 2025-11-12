@@ -17,7 +17,34 @@
      margin: 150px auto;
      margin-left: 500px;
      margin-bottom: 10px;
+     object-fit: cover;
+     position:absolute;
+     animation: movingbox1 10s infinite;
      
+ }
+ @keyframes movingbox1 {
+     0%{
+        top: 0px;
+        left: 0px;
+        /* transform: rotate(-1800deg);
+        position: transform 2s; */
+     }
+     25%{
+        top: 0px;
+        left: 500px;
+     }
+     50%{
+        top: 300px;
+        left: 500px;
+     }
+     75%{
+        top: 300px;
+        left: 0px;
+     }
+     100%{
+        top: 0px;
+        left: 0px;
+     }
  }
 
  .box1 h2 {
@@ -89,6 +116,20 @@
  .bt:hover {
      background: green;
  }
+ /* .bt:hover{ */
+    /* margin-top: 5px; */
+    
+    /* margin-left: 5px;
+    margin-right: 5px;
+    transition: margin-left 0.1s ease-in-out margin-right 0.1s ease-in-out width 0.1s ; */
+ /* } */
+ /* .bt:active{ */
+   /* padding-left: 100px; */
+    /* transition: padding-left  0.1s ; */
+  
+     /* transform: rotate(-1800deg);
+    transition: rotate initial;
+ } */
 
  .link-text {
      text-align: center;
@@ -100,3 +141,11 @@
      border-bottom: 1px solid blue;
      width: fit-content;
  }
+ /* .box1:hover{
+    /* margin-left: 150px; */
+    /* margin-bottom: 500px; */
+    /* margin-top: 800px; * */
+    /* position:absolute; */
+    /* transition:     margin-bottom 1s ease-in-out position 10s    ;
+    transition: margin-top 1s ease-in-out position 10s; */
+ /* } */

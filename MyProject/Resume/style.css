@@ -1,0 +1,261 @@
+/* Basic Reset and Font Setup */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Color Variables for easy theme change */
+:root {
+    --primary-color: #d896b0; /* Light Pink/Mauve from the sidebar */
+    --secondary-color: #ffffff; /* White content background */
+    --text-dark: #333;
+    --text-light: #555;
+    --header-bg: #333;
+}
+
+/* Resume Container - Defines the A4-like page boundary and shadow */
+.resume-container {
+    width: 800px; /* Standard A4 width approximation for screen viewing */
+    min-height: 1100px; /* Standard A4 height approximation */
+    margin: 30px auto;
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header/Title Bar */
+.resume-header {
+    background-color: var(--header-bg);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header-title {
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* Main Body Layout - Sidebar and Content */
+.resume-body {
+    display: flex;
+    flex-grow: 1;
+}
+
+/* Left Sidebar Styles */
+.sidebar {
+    width: 35%; /* Controls the width of the pink section */
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-image-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px auto;
+    border: 3px solid var(--secondary-color);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.designation {
+    margin: 5px 0 0 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+/* Common Info Sections in Sidebar */
+.info-section {
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.info-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.info-title .fas {
+    margin-right: 8px;
+}
+
+/* Contact Section */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-item .fas {
+    font-size: 1.2em;
+    margin-right: 15px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.contact-label {
+    display: none; /* Hide labels for a cleaner look if icons are used */
+}
+
+/* Skill and Language Lists */
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95em;
+}
+
+.skill-list li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.skill-list li::before {
+    content: "\2022"; /* Bullet point */
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+
+/* Right Content Styles */
+.content {
+    width: 65%;
+    padding: 30px 30px 30px 40px;
+    box-sizing: border-box;
+    color: var(--text-dark);
+}
+
+/* Common Section Styling */
+.section {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.section-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.section-title .fas {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+/* Career Objective */
+.objective-text {
+    font-size: 0.95em;
+    text-align: justify;
+    padding-right: 10px;
+}
+
+/* Education */
+.education-item {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.education-item::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.degree {
+    font-size: 1.05em;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.institution {
+    font-size: 0.9em;
+    margin: 2px 0;
+    color: var(--text-light);
+}
+
+.date {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+/* Technical Skills & Hobbies Bullet List */
+.bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+}
+
+.bullet-list li {
+    position: relative;
+    padding-left: 15px;
+    width: calc(50% - 20px); /* Two columns */
+}
+
+.bullet-list li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}

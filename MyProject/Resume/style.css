@@ -1,4 +1,4 @@
-/* Basic Reset and Font Setup */
+ 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -7,19 +7,18 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Color Variables for easy theme change */
+ 
 :root {
-    --primary-color: #d896b0; /* Light Pink/Mauve from the sidebar */
-    --secondary-color: #ffffff; /* White content background */
+    --primary-color: #d896b0;  
+    --secondary-color: #ffffff;  
     --text-dark: #333;
     --text-light: #555;
     --header-bg: #333;
 }
 
-/* Resume Container - Defines the A4-like page boundary and shadow */
 .resume-container {
-    width: 800px; /* Standard A4 width approximation for screen viewing */
-    min-height: 1100px; /* Standard A4 height approximation */
+    width: 800px;  
+    min-height: 1100px;  
     margin: 30px auto;
     background-color: var(--secondary-color);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -27,7 +26,7 @@ body {
     flex-direction: column;
 }
 
-/* Header/Title Bar */
+ 
 .resume-header {
     background-color: var(--header-bg);
     color: var(--secondary-color);
@@ -41,22 +40,22 @@ body {
     letter-spacing: 2px;
 }
 
-/* Main Body Layout - Sidebar and Content */
+ 
 .resume-body {
     display: flex;
     flex-grow: 1;
 }
 
-/* Left Sidebar Styles */
+  
 .sidebar {
-    width: 35%; /* Controls the width of the pink section */
+    width: 35%;  
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 30px 20px;
     box-sizing: border-box;
 }
 
-/* Profile Section */
+ 
 .profile-section {
     text-align: center;
     margin-bottom: 30px;
@@ -90,7 +89,7 @@ body {
     font-weight: 300;
 }
 
-/* Common Info Sections in Sidebar */
+ 
 .info-section {
     padding: 15px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -128,10 +127,9 @@ body {
 }
 
 .contact-label {
-    display: none; /* Hide labels for a cleaner look if icons are used */
+    display: none;  
 }
-
-/* Skill and Language Lists */
+ 
 .skill-list {
     list-style: none;
     padding: 0;
@@ -146,7 +144,7 @@ body {
 }
 
 .skill-list li::before {
-    content: "\2022"; /* Bullet point */
+    content: "\2022";  
     position: absolute;
     left: 0;
     color: var(--secondary-color);
@@ -189,14 +187,14 @@ body {
     color: var(--primary-color);
 }
 
-/* Career Objective */
+ 
 .objective-text {
     font-size: 0.95em;
     text-align: justify;
     padding-right: 10px;
 }
 
-/* Education */
+
 .education-item {
     margin-bottom: 15px;
     position: relative;
@@ -236,7 +234,7 @@ body {
     color: var(--text-light);
 }
 
-/* Technical Skills & Hobbies Bullet List */
+ 
 .bullet-list {
     list-style: none;
     padding: 0;
@@ -250,7 +248,7 @@ body {
 .bullet-list li {
     position: relative;
     padding-left: 15px;
-    width: calc(50% - 20px); /* Two columns */
+    width: calc(50% - 20px);  
 }
 
 .bullet-list li::before {

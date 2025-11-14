@@ -1,12 +1,9 @@
-  * {
-      background-color: #da2d5851;
-  }
- h1{
-     margin-top: 0px;
-     margin-left:100px;
-    font-size:100px;
-     background: linear-gradient(90deg, rgb(126, 206, 126) 0, rgb(205, 152, 152) 5%, red 10%, skyblue 90%);
-     
-}
- 
-  
+ .container{
+
+    img{
+        width: 50px !important;
+       
+      
+        
+    }
+ }

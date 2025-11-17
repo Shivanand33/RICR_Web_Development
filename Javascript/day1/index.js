@@ -8,7 +8,6 @@ console.log(a, b);
 
 let ar = ["ABC", 1235, 45.76, 'a', "true"]
 console.log(arr);
-
 alert("this is alert");
 
 console.warn("this is warning");

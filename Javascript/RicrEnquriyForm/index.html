@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <!----- navbar----- -->
+       <nav class="navbar   w-100  " style="margin-top: 0%;">
+            <div class="container-fluid">
+
+               <img style="width: 19%;" src="logo-2.png" alt="">
+                <div class="gap-3 h-25">
+                     
+                    <button class="me-5 border-0 bg-white">Home</button>
+                    <button class="me-5 border-0 bg-white">About</button>
+                   <button class="me-5 border-0 bg-white ">Course</button>
+                   <button class="me-5 border-0 bg-white ">IDE</button>
+                    <button  class="ms-1 border-0 bg-white">Contact Us</button>
+                    
+                    
+                </div>
+                <form class="d-flex gap-2 me-5" role="search">
+                    <button class="btn border-light    " type="submit">+91 9721591880</button>
+                    <button class="btn btn-outline-success shadow-lg" type="Login">STUDENT LOGIN</button>
+                </form>
+            </div>
+        </nav>
+
+    <!-- main container---- -->
+    <div
+        style="width: 65%; margin-left: 250px; border-radius: 20px; height: 930px;  border: 1px ; margin-top: 20px; background-color:rgb(225, 246, 255)">
+        <div class="  " style="margin-left: 50px; margin-top: 100px; padding-top:40px ; ">
+            <div>
+                <h1 style="margin-left: 30%;">Enquiry Form</h1>
+                <p>Have questions or need assistance? Fill out the form below to connect with our team and explore your
+                    opportunities.</p>
+            </div>
+            <div class=" d-flex mt-4  " style="margin-right: 100px;">
+                <!-- <div class="form-row"> -->
+
+                <div class="">
+                    <label for="first-name">Persone Name</label> <br>
+                    <input style="width: 400px; height: 50px; border-radius: 5px;" type="text" id="Personename"
+                        placeholder="Persone Name">
+                </div>
+
+                <div style="margin-left: 10%; ">
+                    <label for="number">Contact Number*</label> <br>
+                    <input style="width: 400px; height: 50px; border-radius: 5px;" type="text" id="Contactnumber"
+                        placeholder="Contact Number">
+                </div>
+            </div>
+
+            <div class=" d-flex mt-4  " style="margin-right: 100px;">
+                <!-- <div class="form-row"> -->
+
+                <div class="">
+                    <label for="first-name">Emai*</label> <br>
+                    <input style="width: 580px; height: 50px; border-radius: 5px;" type="email" id="email"
+                        placeholder="email">
+                </div>
+
+                <div style="margin-left: 10%; ">
+                    <label for="number">Qualification*</label> <br>
+                    <input style="width: 220px; height: 50px; border-radius: 5px;" type="text" id="Qualification"
+                        placeholder="Qualification">
+                </div>
+            </div>
+
+
+            <div class="mt-4">
+                <label for="">College/School Name*</label> <br>
+                <input style="width: 88%; height: 50px; border-radius: 5px;" type="name" name="College Name"
+                    id="Collagname" placeholder="College/School Name*">
+            </div>
+
+            <div class=" d-flex mt-4   " style="margin-right: 100px;">
+                <!-- <div class="form-row"> -->
+
+                <div class="">
+                    <label for="">Year*</label> <br>
+                    <!-- <input style="width: 400px; height: 50px; border-radius: 5px;" type="text" id="Year" placeholder="Year"  > -->
+                    <select name="" style="width: 400px; height: 50px; border-radius: 5px;" type="text" id="year">
+                        <option value="">First Year</option>
+                        <option value="">Second Year</option>
+                        <option value="">Thrid Year</option>
+                        <option value="">Fourth Year</option>
+                        <option value="">Other</option>
+
+                    </select>
+                </div>
+
+                <div style="margin-left: 10%; ">
+                    <label for="number">Branch*</label> <br>
+                    <input style="width: 400px; height: 50px; border-radius: 5px;" type="text" id="Branch"
+                        placeholder="Branch">
+                </div>
+            </div>
+
+
+            <div class="d-flex  mt-4 gap-5">
+                <div class="box" name="box" id="box">
+                    <span>Interested in Which Course*</span> <br>
+                    <input type="checkbox"><span>Full Stack Web Development - Placement Oriented</span> <br>
+                    <input type="checkbox"><span>Data Science with Python - Placement Oriented</span> <br>
+                    <input type="checkbox"><span> Data Analytics with Python - Placement Oriented</span> <br>
+                    <input type="checkbox"><span>Business Analyst</span> <br>
+                    <input type="checkbox"><span>Java Programming</span> <br>
+                    <input type="checkbox"><span>Python Programming</span><br>
+                    <input type="checkbox"><span>C/C++ Programming</span> <br>
+                    <input type="checkbox"><span>Other</span>
+
+
+                </div>
+                <div style="margin-left: 70px;">
+                    <span> Source of Information</span><br>
+                    <b>(Only choose 'Received call from institute' if you <br> actually got a call from us)*
+                    </b></span>
+                    </p>
+                    <div>
+
+                        <select style="width: 400px; height: 50px; border-radius: 5px;" type="seclct" name="Information"
+                            id="Information"> Source of semi
+                            <option value="">New Paper /Page India</option>
+                            <option value="">frinds/Relatives</option>
+                            <option value="">Social Media</option>
+                            <option value="">Workshop/Seminar</option>
+                            <option value="">Reacive call from institue(only choose if you actually got a call from us)
+                            </option>
+
+
+
+
+                        </select>
+                    </div>
+                    <div class="mt-4">
+                        <span>Name of Excusive</span> <br>
+                        <input style="width: 400px; height: 50px; border-radius: 5px;" type="slect" name="Excusive"
+                            id="Excusive" placeholder="Name of Excusive">
+
+                    </div>
+                </div>
+            </div>
+            <div style="margin-left: 40%; ">
+                <button class="btn btn-dark rounded-pill mt-5" style=" width: 140px; height: 65px;" id="Sumbit"
+                    onclick="Sumbit()">Sumbit</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

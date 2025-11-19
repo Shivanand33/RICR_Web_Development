@@ -22,7 +22,6 @@ function Sumbit() {
     console.log(Address);
 
     alert("Sumbit done")
-
      document.getElementById("Firstname").value="";
     document.getElementById("Lastname").value ="";
     document.getElementById("email").value ="";

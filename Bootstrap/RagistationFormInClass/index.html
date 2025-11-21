@@ -11,7 +11,7 @@
 </head>
 
 <body class="bg-light">
-    <header>
+    <header class="position-sticky top-0 z-2">
         <div class="container-fluid bg-primary px-3 py-1 d-flex justify-content-between">
 
             <div class="d-flex gap-3">
@@ -22,218 +22,250 @@
         </div>
     </header>
     <main>
-        <div class="container bg-white border rounded border-info  p-3 mt-3">
-            <!-- Personal information -->
-            <div class="border border-dark p-3 pt-4 my-3 position-relative">
-                <span class=" px-2 fs-5 position-absolute  bg-white text-primary" style="top: -15px;">Personal
-                    Information</span>
+        <!-- <form> -->
+            <div class="container bg-white border rounded border-info  p-3 mt-3">
+                <!-- Personal information -->
+                <div class="border border-dark p-3 pt-4 my-3 position-relative">
+                    <span class=" px-2 fs-5 position-absolute  bg-white text-primary" style="top: -15px;">Personal
+                        Information</span>
 
 
-                <div class="d-grid gap-3">
-                    <div class="d-flex align-items-center">
-                        <label for="FullName" class="form-label w-25">Full name: <sup class="text-danger">*</sup>
-                        </label>
-                        <input type="text" name="FullName" id="Fullname" class="form-control  " required />
+                    <div class="d-grid gap-3">
+                        <div class="d-flex align-items-center">
+                            <label for="FullName" class="form-label w-25">Full name: <sup class="text-danger">*</sup>
+                            </label>
+                            <input type="text" name="FullName" id="Fullname" class="form-control  " required />
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <label for="email" class="form-label w-25">Email Address: <sup class="text-danger">*</sup>
+                            </label>
+                            <input type="email " name="email" id="email" class="form-control " required />
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <label for="mobile" class="form-label w-25">Mobile no: <sup class="text-danger">*</sup>
+                            </label>
+                            <input type="number" name="mobile" id="mobile" class="form-control " required />
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <label for="dob" class="form-label w-25">D.O.B. : <sup class="text-danger">*</sup>
+                            </label>
+                            <input type="date" name="dob" id="dob" class="form-control " required>
+                        </div>
+
                     </div>
-                    <div class="d-flex align-items-center">
-                        <label for="email" class="form-label w-25">Email Address: <sup class="text-danger">*</sup>
-                        </label>
-                        <input type="email " name="email" id="email" class="form-control " required />
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <label for="mobile" class="form-label w-25">Mobile no: <sup class="text-danger">*</sup>
-                        </label>
-                        <input type="number" name="mobile" id="mobile" class="form-control " required />
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <label for="dob" class="form-label w-25">D.O.B. : <sup class="text-danger">*</sup>
-                        </label>
-                        <input type="date" name="dob" id="dob" class="form-control " required>
+                </div>
+                <!-- Academic Details -->
+
+                <div class="border border-dark p-3 pt-4 position-relative">
+                    <span class=" px-2 fs-5 position-absolute text-primary  bg-white" style="top: -15px;">Acadmic
+                        Details</span>
+                    <div class="d-grid gap-3">
+
+                        <div class="d-flex pt-2">
+                            <label for="" class="form-label w-25">Qualification: <sup class="text-danger">*</sup>
+                            </label>
+
+                            <select name="Qualification" id="Qualification" class="form-select ">
+                                <option value="">--Select Qualification</option>
+                                <option value="10">Secondary Schooling</option>
+                                <option value="12">Senior Secondary Schooling</option>
+                                <option value="UG">Graduation</option>
+                                <option value="PG">Post Graduation</option>
+                                <option value="PHD">P.hd</option>
+                            </select>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <label for="score" class="form-label w-25">Percentage / grade : <sup
+                                    class="text-danger">*</sup>
+                            </label>
+                            <input type="text" name="score" id="score" class="form-control" required />
+
+                        </div>
+
                     </div>
 
                 </div>
-            </div>
-            <!-- Academic Details -->
-
-            <div class="border border-dark p-3 pt-4 position-relative">
-                <span class=" px-2 fs-5 position-absolute text-primary  bg-white" style="top: -15px;">Acadmic
-                    Details</span>
-                <div class="d-grid gap-3">
-
-                    <div class="d-flex pt-2">
-                        <label for="" class="form-label w-25">Qualification: <sup class="text-danger">*</sup>
-                        </label>
-
-                        <select name="Qualification" id="Qualification" class="form-select ">
-                            <option value="">--Select Qualification</option>
-                            <option value="10">Secondary Schooling</option>
-                            <option value="12">Senior Secondary Schooling</option>
-                            <option value="UG">Graduation</option>
-                            <option value="PG">Post Graduation</option>
-                            <option value="PHD">P.hd</option>
-                        </select>
+                <!-- Course Information -->
+                <div class="border border-dark rounded p-3 pt-4 my-3 position-relative">
+                    <span class="px-2 fs-5 position-absolute bg-white text-primary" style="top: -15px">Course
+                        Information</span>
+                    <div class="d-grid gap-3">
+                        <div class="d-flex align-items-center">
+                            <label for="course" class="form-label w-25">Available Courses: <sup
+                                    class="text-danger">*</sup></label>
+                            <select name="course" id="course" class="form-select">
+                                <option value="">--Select Course</option>
+                                <option value="FSD">Full Stack Development</option>
+                                <option value="DS">Data Science</option>
+                                <option value="DA">Data Analytics</option>
+                                <option value="J-DSA">Java DSA</option>
+                                <option value="P-DSA">Python DSA</option>
+                            </select>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <label for="batch" class="form-label w-25">Prefered Batch : <sup class="text-danger">*</sup>
+                            </label>
+                            <div class="d-flex gap-3">
+                                <div class="d-flex gap-2">
+                                    <input type="checkbox" name="batch" id="morning" value="morning"
+                                        class="form-check-input" style="accent-color: red !important;" />
+                                    <span>Morning</span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <input type="checkbox" name="batch" id="afternoon" value="afternoon"
+                                        class="form-check-input" />
+                                    <span>Afternoon</span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <input type="checkbox" name="batch" id="evening" value="evening"
+                                        class="form-check-input" />
+                                    <span>Evening</span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <input type="checkbox" name="batch" id="weekends" value="weekends"
+                                        class="form-check-input" />
+                                    <span>Weekends</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <label for="Timing" class="form-label w-25"> Batch Timing: <sup class="text-danger">*</sup>
+                            </label>
+                            <div class="d-flex gap-3">
+                                <div class="d-flex gap-2">
+                                    <input type="radio" name="Timing" id="morning" value="morning"
+                                        class="form-check-input" style="accent-color: red !important;" />
+                                    <span>7:30 AM</span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <input type="radio" name="Timing" id="afternoon" value="afternoon"
+                                        class="form-check-input" />
+                                    <span>9 AM</span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <input type="radio" name="timing" id="evening" value="evening"
+                                        class="form-check-input" />
+                                    <span>12 PM</span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <input type="radio" name="Timing" id="weekends" value="weekends"
+                                        class="form-check-input" />
+                                    <span>Weekends</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <label for="score" class="form-label w-25">Percentage / grade : <sup class="text-danger">*</sup>
-                        </label>
-                        <input type="text" name="score" id="score" class="form-control" required />
 
-                    </div>
 
                 </div>
+                <!-- //Address -->
 
-            </div>
-            <!-- Course Information -->
-            <div class="border border-dark rounded p-3 pt-4 my-3 position-relative">
-                <span class="px-2 fs-5 position-absolute bg-white text-primary" style="top: -15px">Course
-                    Information</span>
-                <div class="d-grid gap-3">
-                    <div class="d-flex align-items-center">
-                        <label for="course" class="form-label w-25">Available Courses: <sup
-                                class="text-danger">*</sup></label>
-                        <select name="course" id="course" class="form-select">
-                            <option value="">--Select Course</option>
-                            <option value="FSD">Full Stack Development</option>
-                            <option value="DS">Data Science</option>
-                            <option value="DA">Data Analytics</option>
-                            <option value="J-DSA">Java DSA</option>
-                            <option value="P-DSA">Python DSA</option>
-                        </select>
+                <div class="border border-dark p-3 pt-4 my-3 position-relative">
+                    <span class=" px-2 fs-5 position-absolute  bg-white text-primary" style="top: -15px;">Address
+                    </span>
+
+
+                    <div class="d-grid gap-3">
+                        <div class="d-flex align-items-center">
+                            <label for="ResidentialAddress" class="form-label w-25">Residential Address: <sup
+                                    class="text-danger">*</sup>
+                            </label>
+                            <textarea type="text" name="" id="ResidentialAddress" class="form-control  "
+                                required /></textarea>
+
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <label for="city" class="form-label w-25">City: <sup class="text-danger">*</sup>
+                            </label>
+                            <input type="text "   name="city" id="city"
+                                class="form-control " required />
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <label for="pincode" class="form-label w-25">Pin code: <sup class="text-danger">*</sup>
+                            </label>
+                            <input type="pincode" name="picode" id="pincode" class="form-control " required />
+                        </div>
+
                     </div>
+                </div>
+                <!-- Guardian Details -->
+
+                <div class="border border-dark p-3 pt-4 my-3 position-relative">
+                    <span class=" px-2 fs-5 position-absolute  bg-white text-primary" style="top: -15px;">Guardian
+                        Details:
+                    </span>
+
+
+                    <div class="d-grid gap-3">
+                        <div class="d-flex align-items-center">
+                            <label for="ResidentialAddress" class="form-label w-25"> Guardian's Full Name: <sup
+                                    class="text-danger">*</sup>
+                            </label>
+                            <input type="text" name="" id="ResidentialAddress" class="form-control  " required />
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <label for="pincode" class="form-label w-25">Guardian's Contact Number: <sup
+                                    class="text-danger">*</sup>
+                            </label>
+                            <input type="pincode" name="picode" id="pincode" class="form-control " required />
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- scddcdc -->
+                <div class="border border-dark rounded p-3 pt-4 my-3 position-relative">
+                    <span class="px-2 fs-5 position-absolute bg-white text-primary" style="top: -15px;"> Additional
+                        Information:</span>
                     <div class="d-flex align-items-center">
-                        <label for="batch" class="form-label w-25">Prefered Batch : <sup class="text-danger">*</sup>
+                        <label for="batch" class="form-label w-25"> How did you hear about us?:<sup
+                                class="text-danger">*</sup>
                         </label>
                         <div class="d-flex gap-3">
                             <div class="d-flex gap-2">
                                 <input type="checkbox" name="batch" id="morning" value="morning"
                                     class="form-check-input" style="accent-color: red !important;" />
-                                <span>Morning</span>
+                                <span>options such as Friends</span>
                             </div>
                             <div class="d-flex gap-2">
                                 <input type="checkbox" name="batch" id="afternoon" value="afternoon"
                                     class="form-check-input" />
-                                <span>Afternoon</span>
+                                <span>Online Ad</span>
                             </div>
                             <div class="d-flex gap-2">
                                 <input type="checkbox" name="batch" id="evening" value="evening"
                                     class="form-check-input" />
-                                <span>Evening</span>
+                                <span>NewsPaper</span>
                             </div>
                             <div class="d-flex gap-2">
                                 <input type="checkbox" name="batch" id="weekends" value="weekends"
                                     class="form-check-input" />
-                                <span>Weekends</span>
+                                <span>Social Media</span>
+                                <div class="d-flex gap-2">
+                                    <input type="checkbox" name="batch" id="weekends" value="weekends"
+                                        class="form-check-input" />
+                                    <span>Others</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-            </div>
-            <!-- //Address -->
-
-            <div class="border border-dark p-3 pt-4 my-3 position-relative">
-                <span class=" px-2 fs-5 position-absolute  bg-white text-primary" style="top: -15px;">Address
-                </span>
-
-
-                <div class="d-grid gap-3">
-                    <div class="d-flex align-items-center">
-                        <label for="ResidentialAddress" class="form-label w-25">Residential Address: <sup
+                    <div class="d-flex align-items-center pt-3">
+                        <label for="ResidentialAddress" class="form-label w-25">Special Requirements <sup
                                 class="text-danger">*</sup>
                         </label>
                         <textarea type="text" name="" id="ResidentialAddress" class="form-control  "
                             required /></textarea>
 
                     </div>
-                    <div class="d-flex align-items-center">
-                        <label for="city" class="form-label w-25">City: <sup class="text-danger">*</sup>
-                        </label>
-                        <input type="text " pattern="[A-Za-z]" title="Only alphabets allowed" name="city" id="city"
-                            class="form-control " required />
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <label for="pincode" class="form-label w-25">Pin code: <sup class="text-danger">*</sup>
-                        </label>
-                        <input type="pincode" name="picode" id="pincode" class="form-control " required />
-                    </div>
-
                 </div>
-            </div>
-            <!-- Guardian Details -->
-
-            <div class="border border-dark p-3 pt-4 my-3 position-relative">
-                <span class=" px-2 fs-5 position-absolute  bg-white text-primary" style="top: -15px;">Guardian Details:
-                </span>
-
-
-                <div class="d-grid gap-3">
-                    <div class="d-flex align-items-center">
-                        <label for="ResidentialAddress" class="form-label w-25"> Guardian's Full Name: <sup
-                                class="text-danger">*</sup>
-                        </label>
-                        <input type="text" name="" id="ResidentialAddress" class="form-control  " required />
-                    </div>
-
-                    <div class="d-flex align-items-center">
-                        <label for="pincode" class="form-label w-25">Guardian's Contact Number: <sup
-                                class="text-danger">*</sup>
-                        </label>
-                        <input type="pincode" name="picode" id="pincode" class="form-control " required />
-                    </div>
-
-                </div>
+                <button type="reset" class="  w-25 btn btn-danger text-white">reset</button>
+                <button type="sumbit" class="btn btn-primary w-25 btn btn-outline-success text-white"
+                    >submit</button>
             </div>
 
-            <!-- scddcdc -->
-            <div class="border border-dark rounded p-3 pt-4 my-3 position-relative">
-                <span class="px-2 fs-5 position-absolute bg-white text-primary" style="top: -15px;"> Additional
-                    Information:</span>
-                <div class="d-flex align-items-center">
-                    <label for="batch" class="form-label w-25"> How did you hear about us?:<sup
-                            class="text-danger">*</sup>
-                    </label>
-                    <div class="d-flex gap-3">
-                        <div class="d-flex gap-2">
-                            <input type="checkbox" name="batch" id="morning" value="morning" class="form-check-input"
-                                style="accent-color: red !important;" />
-                            <span>options such as Friends</span>
-                        </div>
-                        <div class="d-flex gap-2">
-                            <input type="checkbox" name="batch" id="afternoon" value="afternoon"
-                                class="form-check-input" />
-                            <span>Online Ad</span>
-                        </div>
-                        <div class="d-flex gap-2">
-                            <input type="checkbox" name="batch" id="evening" value="evening" class="form-check-input" />
-                            <span>NewsPaper</span>
-                        </div>
-                        <div class="d-flex gap-2">
-                            <input type="checkbox" name="batch" id="weekends" value="weekends"
-                                class="form-check-input" />
-                            <span>Social Media</span>
-                            <div class="d-flex gap-2">
-                                <input type="checkbox" name="batch" id="weekends" value="weekends"
-                                    class="form-check-input" />
-                                <span>Others</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center pt-3">
-                    <label for="ResidentialAddress" class="form-label w-25">Special Requirements <sup
-                            class="text-danger">*</sup>
-                    </label>
-                    <textarea type="text" name="" id="ResidentialAddress" class="form-control  " required /></textarea>
 
-                </div>
-            </div>
-            <button type="" class="btn btn-primary w-25 btn btn-outline-success text-white"
-                onclick="submit()">Submit</button>
-        </div>
-
-
-
+        <!-- </form> -->
     </main>
 
 

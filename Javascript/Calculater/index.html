@@ -10,50 +10,68 @@
 </head>
 
 <body style="background-color: rgb(95, 251, 251);">
-    <main>
-        <div
-            style="width: 350px; height: 460px; border: 1px solid rgb(148, 33, 33); background-color: black; border-radius: 10px; margin-left: 500px; margin-top: 100px; border-style: 10px 10px 10px  10px; ">
-            <div
-                style="width: 300px; height: 65px; border: 1px solid white; background-color: white; margin-left: 26px; margin-top: 30px;">
 
-            </div>
-            <div style="font-size:x-large; margin-left: 42px; margin-top: 15px; display: flex; gap: 15px;  ">
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">7</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">8</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">9</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">/</button>
-            </div>
-            <div style="font-size: x-large; margin-left: 42px; margin-top: 15px; display: flex; gap: 15px;  ">
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">4</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">5</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">6</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">*</button>
-            </div>
-            <div style="font-size: x-large; margin-left: 42px; margin-top: 15px; display: flex; gap: 15px;  ">
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">1</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">2</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">3</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">-</button>
-            </div>
-            <div style="font-size: x-large; margin-left: 42px; margin-top: 15px; display: flex; gap: 15px;  ">
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">.</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">0</button>
-                <button style="width: 55px; height: 55px; border-color: white; border-radius: 3px;">+</button>
-                <button class="text-white"
-                    style="width: 55px; height: 55px; border-color: #FF5722; background-color: #ff0505;  border-radius: 3px;">C</button>
-            </div>
 
-            <div>
-                <button class="text-white"
-                    style="font-size: xx-large; width:270px; height: 55px; border-color:#ff0505; background-color:#ff0505; border-radius:3px; margin-top: 15px; margin-left: 37px;">=</button>
-            </div>
 
+    <div style="width: 350px; height: 430px; border: 1px solid skyblue; background-color: black; border-radius:
+                20px; margin-left: 500px; margin-top: 100px;   ">
+        <div>
+            <input type="text" name="display" id="display" placeholder="0"
+                style="width: 300px; height: 60px; margin-left: 25px; margin-top: 30px;">
 
         </div>
-    </main>
+
+        <div
+            style="font-size:x-large; margin-top: 5px; display: grid; grid-template-columns: 60px 60px 60px auto; grid-template-rows: 60px 60px 60px 60px ; gap: 5px;  justify-content: center;">
+            <button id="7" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('7')">7</button>
+            <button id="8" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('8')">8</button>
+            <button id="9" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('9')">9</button>
+            <button id="/" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('/')">/</button>
+            <button id="4" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('4')">4</button>
+            <button id="5" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('5')">5</button>
+            <button id="6" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('6')">6</button>
+            <button id="0" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('*')">*</button>
+            <button id="1" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('1')">1</button>
+            <button id="2" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('2')">2</button>
+            <button id="3" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('3')">3</button>
+            <button id="-" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('-')">-</button>
+            <button id="." style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('.')">.</button>
+            <button id="0" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('0')">0</button>
+            <button id="+" style="width: 55px; height: 55px; border-color: white; border-radius: 3px;"
+                onclick="Input('+')">+</button>
+            <button id="C" class="text-white"
+                style="width: 55px; height: 55px; border-color: #FF5722; background-color: #ff0505;  border-radius: 3px;"
+                onclick="Input('C')">C</button>
+
+            <button class="text-white" id="="
+                style="  font-size: xx-large; width:250px; height: 55px; border-color:#ff0505; background-color:#ff0505; border-radius:3px;  "
+                onclick="Input('=')">=</button>
+
+        </div>
+
+
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

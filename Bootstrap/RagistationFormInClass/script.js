@@ -1,28 +1,4 @@
-// function sumbit() {
-
-
-
-//     document.querySelectorAll("input[name='batch']:checked");  
-//     batch.forEach((element) => {
-//    selectedTiming.push(element.value);
-//     });
-
-
-//  console.log(selectedTiming);
-
-//  const selcectedBatch = document.querySelector(
-//     "input[name='timing']:cheaked"
-//  ).value;
-
-//  console.log(selcectedBatch);
-// }
-// function clearForm() {
-//     window.location.reload();
-// }
-
-
 function submit() {
-
 }
 function submit() {
     const fn = document.getElementById("FullName").value;

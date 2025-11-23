@@ -1,0 +1,27 @@
+#bulb{
+    padding: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: fit-content;
+}
+button{
+    margin: 10px;
+}
+
+#smartbulb{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.on{
+    background-color: yellow;
+}
+
+/* .on/off{
+    background-color: rgb(255, 47, 0);
+}
+  */
+ 

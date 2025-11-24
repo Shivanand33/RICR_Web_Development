@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="calculater">
+        <input type="text" name="display" id="display" placeholder="0" readonly>
+        <div>
+            <button id="C" class="oprater ac" onclick="Result('C')">C</button>
+            <button id="DEl" class="oprater del" onclick="Result('DEL')">DEL</button>
+            <button id="%" class="oprater " onclick="Result('%')">%</button>
+            <button id="/" onclick="Result('/')" class="oprater">/</button>
+        </div>
+        <div>
+            <button id="7" onclick="Result('7')">7</button>
+            <button id="8" onclick="Result('8')">8</button>
+            <button id="9" onclick="Result('9')">9</button>
+            <button id="*" onclick="Result('*')" class="oprater">*</button>
+        </div>
+        <div>
+            <button id="4" onclick="Result('4')">4</button>
+            <button id="5" onclick="Result('5')">5</button>
+            <button id="6" onclick="Result('6')">6</button>
+            <button id="-" onclick="Result('-')" class="oprater">-</button>
+        </div>
+        <div>
+            <button id="1" onclick="Result('1')">1</button>
+            <button id="2" onclick="Result('2')">2</button>
+            <button id="3" onclick="Result('3')">3</button>
+            <button id="+" class="oprater" onclick="Result('+')">+</button>
+        </div>
+
+        <div>
+            <button id="00" onclick="Result('00')">00</button>
+            <button id="0" onclick="Result('0')">0</button>
+            <button id="." onclick="Result('.')">.</button>
+            <button id="=" class="equalbtn" onclick="Result('=')">=</button>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
    const userheading= document.getElementById("h");
    const userp= document.getElementById("p");
     
-   const userparagraph= document.getElementById("paragraph");
+ 
     usermain.addEventListener("change",()=>changename (usermain.value));
     function changename(color){
         document.getElementById("main").style.backgroundColor=color;
@@ -19,7 +19,7 @@
     }
 
      userp.addEventListener("change",()=>changep(userp.value));
-    function changep (color){
+    function changep (color) {      
         document.getElementById("paragraph").style.color=color;
 
       

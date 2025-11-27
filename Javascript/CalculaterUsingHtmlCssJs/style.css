@@ -13,11 +13,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    /* position: fixed; */
     background:  url("viral.jpg");
     
     
-    /* background-size: cover; */
+/* background-size: cover; */
      
     
 }
@@ -46,7 +46,7 @@ input{
     
 }
 input::placeholder{
-    color: #fff;
+    color: #ffffff;
 }
 button{
     width: 60px;

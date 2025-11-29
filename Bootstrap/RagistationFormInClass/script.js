@@ -11,6 +11,7 @@ function submit() {
     const nam = document.getElementById("name").value;
     const mo = document.getElementById("mobile").value;
     const sp = document.getElementById("special").value;
+   
     let Preferedbatch = [];
     document
         .querySelectorAll("input[name='batch']:checked")

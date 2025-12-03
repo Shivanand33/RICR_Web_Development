@@ -5,8 +5,8 @@ function AddTask() {
 
     if(task){
         const l = document.createElement("li");
-    l.classList.add("p-2", "d-flex", "align-items-center", "border-bottom")
-
+    l.classList.add("p-2", "d-flex", "align-items-center","border-bottom")
+      
     const  d = document.createElement("div");
     d.classList.add("w-75");
     d.innerText = task;

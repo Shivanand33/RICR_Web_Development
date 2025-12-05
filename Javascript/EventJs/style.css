@@ -1,27 +1,87 @@
-#bulb{
-    padding: 50px;
-    border: 1px solid black;
-    border-radius: 50%;
-    width: fit-content;
+#bulb {
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: fit-content;
 }
-button{
-    margin: 10px;
+button {
+  margin: 10px;
 }
 
-#smartbulb{
-    height: 100px;
-    width: 100px;
-    display: flex;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 50%;
+#smartbulb {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 50%;
 }
-.on{
-    background-color: yellow;
+.on {
+  background-color: yellow;
+}
+#mainbulb {
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: fit-content;
+}
+
+
+#c1 {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: fit-content;
+  background-color: skyblue;
+}
+#c2 {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: fit-content;
+  background-color: black;
+}
+#c3 {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: fit-content;
+  background-color: blue;
+}
+#c4 {
+  padding: 15px;
+  border: 1px solid red;
+  border-radius: 50%;
+  width: fit-content;
+  background-color: red;
+}
+#c5 {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: fit-content;
+  background-color: green;
+}
+#c6 {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: fit-content;
+  background-color: orange;
+}
+#c7 {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: fit-content;
+  background-color: maroon;
+}
+.m {
+  display: flex;
+  gap: 10px;
 }
 
 /* .on/off{
     background-color: rgb(255, 47, 0);
 }
   */
- 

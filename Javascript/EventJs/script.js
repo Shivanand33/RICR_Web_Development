@@ -40,3 +40,55 @@ function black(){
  function SB_control2(){
      document.getElementById("smartbulb").classList.toggle("on");
  }
+
+
+
+ document.getElementById("c1").addEventListener("mouseenter",() =>{
+    fillColor("skyblue");
+
+ })
+  document.getElementById("c1").addEventListener("mouseleave",() =>{
+    fillColor("white");
+
+ })
+ document.getElementById("c2").addEventListener("mouseenter",() =>{
+    fillColor("black");
+
+ })
+
+ document.getElementById("c3").addEventListener("mouseenter",() =>{
+    fillColor("blue");
+
+ })
+
+ document.getElementById("c4").addEventListener("mouseenter",() =>{
+    fillColor("red");
+
+ })
+
+ document.getElementById("c5").addEventListener("mouseenter",() =>{
+    fillColor("green");
+
+ })
+
+ document.getElementById("c6").addEventListener("mouseenter",() =>{
+    fillColor("orange");
+
+ })
+
+ document.getElementById("c7").addEventListener("mouseenter",() =>{
+    fillColor("maroon");
+
+ 
+ })
+ document.getElementById("c7").addEventListener("mouseleave",() =>{
+    fillColor("white");
+
+ 
+ })
+
+ function fillColor(Color){
+    console.log(Color);
+    document.getElementById("mainbulb").style.backgroundColor = Color;
+    
+}

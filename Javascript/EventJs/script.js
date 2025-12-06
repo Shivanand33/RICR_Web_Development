@@ -55,27 +55,37 @@ function black(){
     fillColor("black");
 
  })
-
+ document.getElementById("c2").addEventListener("mouseleave",() =>{
+    fillColor("white");
+ })
  document.getElementById("c3").addEventListener("mouseenter",() =>{
     fillColor("blue");
 
  })
-
+ document.getElementById("c3").addEventListener("mouseleave",() =>{
+    fillColor("white");
+ })
  document.getElementById("c4").addEventListener("mouseenter",() =>{
     fillColor("red");
 
  })
-
+ document.getElementById("c4").addEventListener("mouseleave",() =>{
+    fillColor("white");
+ })
  document.getElementById("c5").addEventListener("mouseenter",() =>{
     fillColor("green");
 
  })
-
+ document.getElementById("c5").addEventListener("mouseleave",() =>{
+    fillColor("white");
+ })
  document.getElementById("c6").addEventListener("mouseenter",() =>{
     fillColor("orange");
 
  })
-
+ document.getElementById("c6").addEventListener("mouseleave",() =>{
+    fillColor("white");
+ })
  document.getElementById("c7").addEventListener("mouseenter",() =>{
     fillColor("maroon");
 

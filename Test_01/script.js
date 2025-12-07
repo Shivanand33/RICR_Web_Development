@@ -3,8 +3,8 @@ function course(){
      
 }
 
-function enroll(){
- console.log("enroll");
+function submit(){
+ console.log("submit");
  
  const fullName = document.getElementById("fullName").value;
  const branch = document.getElementById("branch").value;
@@ -20,8 +20,8 @@ function enroll(){
  console.log(email);
  console.log(coursename);
 
- alert("enroll done")
- 
+ alert("submit done")
+console.log("submit done"); 
 
  document.getElementById("fullName").value="";
   document.getElementById("branch").value="";
@@ -29,7 +29,7 @@ function enroll(){
   document.getElementById("collage").value="";
  document.getElementById("email").value="";
  document.getElementById("courasename").value="";
- console.log("enroll done");
+  
  
  
 }

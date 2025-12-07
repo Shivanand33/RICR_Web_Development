@@ -23,20 +23,20 @@
                         <span class="material-symbols-outlined">
                             mark_email_unread
                         </span>
-                        <input type="email" placeholder="Enter your email">
+                        <input type="email" name="email" id="email" placeholder="Enter your email">
                     </div>
                     <div class="secondinput">
                         <span class="material-symbols-outlined">
                             lock_open
                         </span>
-                        <input type="password" placeholder="Comfirm a Password"> <span class="eye"> &#128065; </span>
+                        <input type="password" name="password" id="password" placeholder="Comfirm a Password"> <span class="eye"> &#128065; </span>
                     </div>
                     <div class="thirdinput">
-                        <label><input type="checkbox"> Remember me</label>
+                        <label><input  type="checkbox" name="me" id="me"> Remember me</label>
                         <a href="">Forgot password?</a>
            
                     </div>
-                    <button type="sumbit" class="bt">Login Now</button>
+                    <button onclick="Login()" type="sumbit" class="bt">Login Now</button>
                     <div>
                         <p class="link-text">Don't have an account? <a href="link">Signup now</a></p>
                     </div>
@@ -44,6 +44,7 @@
             </div>
 
     </section>
+    <script src="script.js"></script>
 
 </body>
 

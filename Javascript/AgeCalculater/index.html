@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+</head>
+
+<body>
+
+    <div class="container d-flex align-items-center justify-content-center border-3 rounded shadow card  gap-3 p-5 mt-5">
+        <div class="fs-2">
+         <span class="text-decoration-underline"><b>AGE CALCULATOR</b></span>
+          
+        </div>
+
+  <div class="d-grid gap-4 w-100"> 
+        <div class=" w-100 d-grid gap-2">
+            <h5 class="d-flex align-items-center justify-content-center" >Enter Your Date Of Birth</h5>
+            <input class="form-control border-2 border-black" type="date" name="yourB" id="yourdob" placeholder="dob">
+        </div>
+        
+        <div class="w-100 d-grid gap-2">
+            <h5 class="d-flex align-items-center justify-content-center">Current Date</h5>
+            <input class="form-control w-100 border-2 border-black" type="date" name="currentD" id="currentdob" placeholder="dob">
+        </div>
+        </div>
+
+        <div class="m-3">
+            <button onclick="calculate()" class=" btn btn-primary text-light btn btn-outline-success">Calculate</button>
+
+        </div>
+        <div>
+            <span id="countage"   class="fs-5 dis"><b> </b></span>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

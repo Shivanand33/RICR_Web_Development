@@ -19,7 +19,7 @@ if(!/^[6-9]\d{9}/.test(mobile)){
 } 
 
 const currentdate = new Date.toString();
-console.log(currentdate);
+console.log(currentdatey6);
 
  
  

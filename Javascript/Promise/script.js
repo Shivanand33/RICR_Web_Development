@@ -1,0 +1,25 @@
+function getData(ID) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (ID === 4) {
+        reject("ID not Found");
+      } else {
+        console.log("Data", ID);
+        resolve("Task Done");
+      }
+    }, 2000);
+  });
+}
+getData(1)
+  .then((res) => {
+    return getData(2);
+  })
+  .then((res) => {
+    return getData(3);
+  })
+  .then((res) => {
+    return getData(4);
+  })
+  .catch((rej) => {
+    console.log(rej);
+  });

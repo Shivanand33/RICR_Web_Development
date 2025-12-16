@@ -4,7 +4,7 @@ function TipAmount() {
   let Person = document.getElementById("total").value;
   let output = document.getElementById("tipAmount");
 
-  if (bill === "" || service === "" || Person === "" || Person<= 0) {
+  if (bill === "" || service === "" || Person === "" || Person<= 0){
     output.innerHTML = "Please fill all details";
     output.style.color = "red";
     return;

@@ -1,6 +1,4 @@
-function submit() {
-}
-function submit() {
+ function submit() {
     const fn = document.getElementById("FullName").value;
     const em = document.getElementById("email").value;
     const mb = document.getElementById("mobile").value;
@@ -18,7 +16,7 @@ function submit() {
         .forEach((element) => {
             Preferedbatch.push(element.value);
         });
-    const pt = document.querySelector("input[name='timing']:checked").value;
+    const pt = document.querySelector("input[name='timing']:checked")
     const ad = document.getElementById("address").value;
     const ct = document.getElementById("city").value;
     const pn = document.getElementById("pin").value;

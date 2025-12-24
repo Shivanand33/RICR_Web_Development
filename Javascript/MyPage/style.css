@@ -1,2 +1,10 @@
+a:hover{
+    color: red !important;
+}
+ a:active{
+    color: red !important;
+ }
+ #home{
+    height: 100vh;
+ }
 
- 

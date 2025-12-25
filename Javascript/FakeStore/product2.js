@@ -8,14 +8,14 @@ async function getProducts() {
 
     data.forEach((element) => {
       const d = document.createElement("div");
-      d.classList.add("col-4", "p-2");
+      d.classList.add("col-12", "p-2");
 
       d.innerHTML = `
           <div class="rounded shadow  h-100 d-flex rounded shadow gap-3">
                 <div class="col-3">
                     <img src=${element.image} alt=${
         element.title
-      } class="object-fit-contain h-100 w-100" />
+      } class="object-fit-contain h-75 w-50" />
                 </div>
                 <div class="col-8">
                     <div class="fw-bold fs-4">

@@ -11,10 +11,10 @@ async function getProducts() {
 
     data.forEach((element) => {
       const d = document.createElement("div");
-      d.classList.add("col-4", "p-2");
+      d.classList.add("col-12","p-2");
 
       d.innerHTML = `
-        <div class="rounded shadow h-100 d-flex gap-3">
+        <div class="rounded shadow w-100 h-100 d-flex gap-3">
           <div class="col-3">
             <img src="${element.image_link}" alt="${
         element.name

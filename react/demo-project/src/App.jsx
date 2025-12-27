@@ -8,7 +8,7 @@ import Footer from "./componants/Footer";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-import Product from "./pages/Producr";
+import Producr from "./pages/Producr";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/producr" element={<Product />} />
+          <Route path="/producr" element={<Producr />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

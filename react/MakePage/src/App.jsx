@@ -7,6 +7,7 @@
  import About from './page/About';
  import Contact from './page/Contact';
  import Product from './page/Product';
+import Start from './page/Start';
  import { FcBusinessContact } from "react-icons/fc";
  
  function App() {
@@ -21,7 +22,8 @@
          <Route path='About'  element={ <About />} />
           <Route path='Product'  element={ <Product />} />
            <Route path='Contact'  element={ <Contact />} />
-          
+           <Route path='Start' element={ <Start />} />
+        
        </Routes>
        <Footer />
        </BrowserRouter>

@@ -35,12 +35,12 @@ const Contact = () => {
   };
   return (
     <>
-      <div className="text-center mt-25 ">
-        <h1>Contact Us</h1>
-        <div>
+      <div className=" text-center mt-25">
+        <h1>Contact Us:</h1>
+        <div className="">
           <form onReset={handleClearForm} onSubmit={formSubmit}>
             <div className="flex items-center justify-center gap-2">
-              <label htmlFor="fullname">Full Name</label>
+              <label htmlFor="fullname">Full Name:</label>
               <input
                 type="text"
                 name="fullname"
@@ -49,10 +49,11 @@ const Contact = () => {
                 value={fullname}
                 onChange={(e) => setfullname(e.target.value)}
                 placeholder="Enter Name"
-              required />
+                required
+              />
             </div>
             <div className="flex items-center justify-center gap-2 mt-1">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Email:</label>
               <input
                 type="email"
                 name="email"
@@ -61,10 +62,11 @@ const Contact = () => {
                 value={email}
                 onChange={(e) => setemail(e.target.value)}
                 placeholder="Enter Email"
-              required />
+                required
+              />
             </div>
             <div className="flex items-center justify-center gap-2 mt-1">
-              <label htmlFor="number">Number</label>
+              <label htmlFor="number">Number:</label>
               <input
                 type="text"
                 name="number"
@@ -73,7 +75,8 @@ const Contact = () => {
                 value={number}
                 onChange={(e) => setnumber(e.target.value)}
                 placeholder="Enter Number"
-              required />
+                required
+              />
             </div>
             <div className="flex items-center justify-center gap-5">
               <button

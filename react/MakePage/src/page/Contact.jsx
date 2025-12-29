@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const Contact = () =>{
-  const [contactData, setContactData] = useState({
+const Contact = () => {
+  const [ContactData, setContactData] = useState({
     fullName: "",
     email: "",
     phone: "",
@@ -9,15 +9,12 @@ const Contact = () =>{
     subject: "",
     message: "",
   });
-
   const [isLoading, setIsLoading] = useState(false);
-
   const handleChange = (e) => {
-    const { name, value } = e.traget;
+    const { name, value } = e.target;
     setContactData((previousData) => ({ ...previousData, [name]: value }));
   };
 
-  const handleClearForm = () => {;
   const handleClearForm = () => {
     setContactData({
       fullName: "",
@@ -33,10 +30,7 @@ const Contact = () =>{
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch(
-        "https://official-joke-api.appspot.com/jokes/jhbaskdjbf"
-      );
-      console.log(contactData);
+      console.log(ContactData);
     } catch (error) {
       console.log(error.message);
     } finally {
@@ -44,24 +38,23 @@ const Contact = () =>{
     }
     handleClearForm();
   };
+
   return (
-     <>
+    <>
       <div className="text-center">
-        <h1>Contact Us</h1>
+        <h1 className="text-4xl font-bold">Login Form</h1>
         <div className="container">
-          <form onReset={handleClearForm} onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="fullName">Full Name</label>
+          <form className="shadow-2xl m-10 w-100 ms-150 grid gap-3 items-center justify-between" onReset={handleClearForm} onSubmit={handleSubmit}>
+            <div className="">
+              <label htmlFor="fullName">Full Name:</label>
               <input
                 type="text"
                 name="fullName"
                 id="fullName"
-                value={fullName}
-                onChange={(event) => setFullName(event.target.value)}
-                value={contactData.fullName}
+                value={ContactData.fullName}
                 onChange={handleChange}
                 placeholder="Enter your Name"
-                className="text-primary"
+                className="border-2 w-70 ms-5"
               />
             </div>
 
@@ -71,12 +64,10 @@ const Contact = () =>{
                 type="email"
                 name="email"
                 id="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                value={contactData.email}
+                value={ContactData.email}
                 onChange={handleChange}
                 placeholder="Enter your Email"
-                className="text-primary"
+                className="border-2 ms-5 w-75"
               />
             </div>
 
@@ -86,10 +77,10 @@ const Contact = () =>{
                 type="number"
                 name="phone"
                 id="phone"
-                value={contactData.phone}
+                value={ContactData.phone}
                 onChange={handleChange}
                 placeholder="Enter your phone"
-                className="text-primary"
+                className="border-2 ms-5"
               />
             </div>
 
@@ -99,10 +90,10 @@ const Contact = () =>{
                 type="text"
                 name="city"
                 id="city"
-                value={contactData.city}
+                value={ContactData.city}
                 onChange={handleChange}
                 placeholder="Enter your city"
-                className="text-primary"
+                className="border-2 ms-5"
               />
             </div>
 
@@ -112,10 +103,10 @@ const Contact = () =>{
                 type="text"
                 name="subject"
                 id="subject"
-                value={contactData.subject}
+                value={ContactData.subject}
                 onChange={handleChange}
                 placeholder="Enter your subject"
-                className="text-primary"
+                className="border-2 ms-5"
               />
             </div>
 
@@ -124,19 +115,17 @@ const Contact = () =>{
               <textarea
                 name="message"
                 id="message"
-                value={message}
-                onChange={(event) => setMessage(event.target.value)}
-                value={contactData.message}
+                value={ContactData.message}
                 onChange={handleChange}
                 placeholder="Enter your Message"
-                className="text-primary"
+                className="border-2 ms-5"
               ></textarea>
             </div>
-            <div>
-              <button type="reset" className="btn btn-danger">
+            <div className="flex gap-3 items-center justify-center">
+              <button type="reset" className="bg-red-700  text-2xl text-white rounded">
                 Clear Form
               </button>
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="bg-green-700 text-2xl text-white rounded">
                 {isLoading ? "Loading" : "Submit"}
               </button>
             </div>

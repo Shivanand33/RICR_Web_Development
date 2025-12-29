@@ -14,6 +14,8 @@ function Header() {
       <Link to={"/about"} className="">
         About
       </Link>
+
+      <Link to={"/Contact"} className="">Contact</Link>
     </>
   );
 }

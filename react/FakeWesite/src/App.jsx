@@ -7,6 +7,7 @@
  import About from './page/About';
  import Product from './page/Product';
  import Contact from './page/Contact';
+ import SingUp from './page/SingUp';
  
  const App = () => {
    return (
@@ -19,6 +20,7 @@
       <Route path='About' element={<About/>}/>
       <Route path='Product' element={<Product/>}/>
       <Route path='Contact' element={<Contact/>}/>
+      <Route path='SingUP' element={<SingUp/>}/>
 
        
     </Routes>

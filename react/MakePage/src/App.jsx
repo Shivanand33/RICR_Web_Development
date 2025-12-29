@@ -8,6 +8,7 @@
  import Contact from './page/Contact';
  import Product from './page/Product';
 import Start from './page/Start';
+import SingUp from './page/SingUp';
  import { FcBusinessContact } from "react-icons/fc";
  
  function App() {
@@ -23,6 +24,7 @@ import Start from './page/Start';
           <Route path='Product'  element={ <Product />} />
            <Route path='Contact'  element={ <Contact />} />
            <Route path='Start' element={ <Start />} />
+          <Route path='SingUp' element={ <SingUp />} />
         
        </Routes>
        <Footer />

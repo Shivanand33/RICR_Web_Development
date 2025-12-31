@@ -1,4 +1,4 @@
- import React, { useState } from "react";
+import React, { useState } from "react";
 
 const SignUp = () => {
   const [contactData, setContactData] = useState({
@@ -15,7 +15,6 @@ const SignUp = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  // ✅ HANDLE CHANGE
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
@@ -34,7 +33,6 @@ const SignUp = () => {
     }
   };
 
-  // ✅ CLEAR FORM
   const handleClearForm = () => {
     setContactData({
       fullName: "",
@@ -49,7 +47,6 @@ const SignUp = () => {
     });
   };
 
-  // ✅ SUBMIT
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -69,20 +66,22 @@ const SignUp = () => {
       <h1>Contact Us</h1>
 
       <div className="container">
-        <form className="border-2 grid gap-3 mx-auto w-125 h-100" onSubmit={handleSubmit} onReset={handleClearForm}>
-          {/* Full Name */}
+        <form
+          className="border-2 grid gap-3 mx-auto w-125 h-100"
+          onSubmit={handleSubmit}
+          onReset={handleClearForm}
+        >
           <div>
             <label>Full Name</label>
             <input
               type="text"
               name="fullName"
-               className="border-2"
+              className="border-2"
               value={contactData.fullName}
               onChange={handleChange}
             />
           </div>
 
-          {/* Email */}
           <div>
             <label>Email</label>
             <input
@@ -94,7 +93,6 @@ const SignUp = () => {
             />
           </div>
 
-          {/* Phone */}
           <div>
             <label>Phone</label>
             <input
@@ -106,7 +104,6 @@ const SignUp = () => {
             />
           </div>
 
-          {/* City */}
           <div>
             <label>City</label>
             <input
@@ -118,7 +115,6 @@ const SignUp = () => {
             />
           </div>
 
-          {/* Subject */}
           <div>
             <label>Subject</label>
             <input
@@ -130,7 +126,6 @@ const SignUp = () => {
             />
           </div>
 
-          {/* Religion */}
           <div>
             <label>Religion</label>
             <select
@@ -179,7 +174,7 @@ const SignUp = () => {
             Other
           </div>
 
-          {/* Skills */}
+         
           <div>
             <label>Skills</label>
             <input
@@ -220,7 +215,6 @@ const SignUp = () => {
             React
           </div>
 
-          {/* Message */}
           <div>
             <label>Message</label>
             <textarea
@@ -230,10 +224,17 @@ const SignUp = () => {
             />
           </div>
 
-          {/* Buttons */}
           <div className="flex gap-3 items-center justify-center">
-            <button className="bg-red-700 w-30 rounded text-white text-center" type="reset">Clear</button>
-            <button className="bg-green-700 w-30 rounded text-white text-center"  type="submit">
+            <button
+              className="bg-red-700 w-30 rounded text-white text-center"
+              type="reset"
+            >
+              Clear
+            </button>
+            <button
+              className="bg-green-700 w-30 rounded text-white text-center"
+              type="submit"
+            >
               {isLoading ? "Loading..." : "Submit"}
             </button>
           </div>

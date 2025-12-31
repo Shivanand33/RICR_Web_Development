@@ -1,6 +1,7 @@
  import React from 'react'
  import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
  import Ricr from './page/Ricr';
+import Header from './Camponents/Header';
 
   
  
@@ -8,9 +9,13 @@
    return (
     <>
     <BrowserRouter>
+    <Header />
      <Routes>
+      
+       
 
-       <Route path='/' element={<Ricr/>}/>
+       <Route path='ricr' element={<Ricr/>}/>
+       
 
      </Routes>
   

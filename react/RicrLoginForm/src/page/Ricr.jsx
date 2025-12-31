@@ -13,6 +13,7 @@ const Ricr = () => {
     about: "",
     require: "",
   });
+  const [validationError, setValidationError] = useState({})
   const handleChange = (e) => {
     const { name, value } = e.target;
     setloginData((prev) => ({
@@ -34,10 +35,28 @@ const Ricr = () => {
       require: "",
     });
   };
+  const validate = () =>{
+// let Error = {}
+
+//   if(loginData.fullName.length < 3) {
+//     Error.fullName = "Name shoud be more the 3 charcthers";
+
+//   }else{
+//            Error.fullName = "Name";
+
+//   }
+// }
+  
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(!validate()){
+      set
+    }
+     
     try {
       console.log("Form Data", loginData);
+      toast.sucess("Ragitation Seccsfull");
     } catch (error) {
       console.log(error.message);
     } finally {
@@ -54,14 +73,14 @@ const Ricr = () => {
 
       <form
         action=""
-         className="max-w-4xl mx-auto mt-20 bg-white shadow-xl rounded-xl border p-8"
+        className="max-w-4xl mx-auto mt-20 bg-sky-100 shadow-xl rounded-xl border p-8"
         onSubmit={handleSubmit}
         onReset={handleClearForm}
       >
-          <h2 className="text-2xl font-semibold mb-8 text-center">
-    Student Registration Form
-  </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <h2 className="text-2xl font-semibold mb-8 text-center">
+          Student Registration Form
+        </h2>
+        <div className="grid  gap-6">
           <div className="flex gap-5">
             <label htmlFor="fullName">
               Full Name <sup className="text-red-500">*</sup>
@@ -73,7 +92,7 @@ const Ricr = () => {
               placeholder="Enter your Name"
               value={loginData.fullName}
               onChange={handleChange}
-              className="border-2 w-70 ms-5"
+              className="  w-100 p-2  border-1 focus:ring-2 focus:outline-red-400 shadow-xl rounded-xl"
             />
           </div>
           <div>
@@ -87,7 +106,7 @@ const Ricr = () => {
               value={loginData.email}
               onChange={handleChange}
               placeholder="Enter your Email"
-              className="border-2 ms-5 w-75"
+              className="border-2 ms-5 w-75 shadow-xl rounded-xl"
             />
           </div>
           <div>
@@ -100,7 +119,7 @@ const Ricr = () => {
               id="dob"
               value={loginData.dob}
               onChange={handleChange}
-              className="border-2"
+              className="border-2 shadow-xl rounded-xl"
             />
           </div>
           <div>
@@ -113,7 +132,7 @@ const Ricr = () => {
                 id=""
                 value={loginData.qualification}
                 onChange={handleChange}
-                className="border-2"
+                className="border-2 shadow-xl rounded-xl"
               >
                 <option value="qualification">---Qualification---</option>
                 <option value="12th">Intermediate</option>
@@ -133,7 +152,7 @@ const Ricr = () => {
                 id=""
                 value={loginData.course}
                 onChange={handleChange}
-                className="border-2"
+                className="border-2 shadow-xl rounded-xl"
               >
                 <option value="course">---Course---</option>
                 <option value="java">Java</option>
@@ -194,7 +213,7 @@ const Ricr = () => {
                 id="address"
                 value={loginData.address}
                 onChange={handleChange}
-                className="border-2"
+                className="border-2 shadow-xl rounded-xl"
               ></textarea>
             </div>
             <div>
@@ -207,12 +226,12 @@ const Ricr = () => {
                 id="phone"
                 value={loginData.phone}
                 onChange={handleChange}
-                className="border-2"
+                className="border-2 shadow-xl rounded-xl"
               />
             </div>
           </div>
           <div>
-            <div>
+            <div className="">
               <label htmlFor="about">
                 How did you hear about us <sup className="text-red-500">*</sup>
               </label>
@@ -265,15 +284,21 @@ const Ricr = () => {
                 id="require"
                 value={loginData.require}
                 onChange={handleChange}
-                className="border-2"
+                className="border-2 shadow-xl rounded-xl"
               ></textarea>
             </div>
           </div>
-          <div className="flex items-center justify-center ms-100 gap-5">
-            <button type="submit" className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition">
+          <div className="flex items-center justify-center   gap-5">
+            <button
+              type="submit"
+              className="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600  "
+            >
               Submit
             </button>
-            <button type="reset" className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600 transition">
+            <button
+              type="reset"
+              className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600"
+            >
               Clear
             </button>
           </div>

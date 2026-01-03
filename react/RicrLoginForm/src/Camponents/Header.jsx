@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
        
-        <nav className="bg-green-500 p-3 flex items-center justify-between">
+        <nav className="bg-green-500 w-full p-3 flex items-center justify-between">
           <div className="text-3xl flex  text-white items-center justify-center font-bold ">
             <p className="text-3xl shadow  text-yellow-400  font-bold ">
               RICR LO
@@ -17,20 +17,20 @@ const Header = () => {
               
         <Link
               to={"/"}
-              className="bg-purple-600 text-white font-bold w-30"
+              className="bg-purple-600 text-white font-bold w-30 rounded-lg  p-2 text-center"
             >
               Home
             </Link>
 
             <Link
               to={"ricr"}
-              className="bg-purple-600 text-white font-bold w-30"
+              className="bg-purple-600 text-white font-bold w-30 rounded-lg  p-2 text-center"
             >
               RICR LOGIN
             </Link>
              <Link
               to={"ragister"}
-              className="bg-purple-600 text-white font-bold w-30"
+              className="bg-purple-600 text-white font-bold w-30 rounded-lg  p-2 text-center"
             >
               Ragister
             </Link>

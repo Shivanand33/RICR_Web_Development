@@ -63,74 +63,73 @@ const SignUp = () => {
 
   return (
     <div className="text-center">
-      <h1>Contact Us</h1>
-
-      <div className="container">
+      <h1 className="text-3xl font-bold ">SingUp</h1>
         <form
-          className="border-2 grid gap-3 mx-auto w-125 h-100"
+          className="shadow-2xl grid gap-3 mx-auto w-125 h-auto  items-center justify-start"
           onSubmit={handleSubmit}
           onReset={handleClearForm}
         >
-          <div>
-            <label>Full Name</label>
+           
+          <div className="flex mt-2">
+            <label>FullName:</label>
             <input
               type="text"
               name="fullName"
-              className="border-2"
+              className="border-2  border-gray-500 ms-1  p-2 rounded w-95"
               value={contactData.fullName}
               onChange={handleChange}
             />
           </div>
 
           <div>
-            <label>Email</label>
+            <label>Email:</label>
             <input
               type="email"
               name="email"
-              className="border-2"
+              className="border-2  border-gray-500 ms-2   p-2 rounded w-98"
               value={contactData.email}
               onChange={handleChange}
             />
           </div>
 
           <div>
-            <label>Phone</label>
+            <label>Phone:</label>
             <input
               type="number"
               name="phone"
-              className="border-2"
+              className="border-2  border-gray-500 ms-2   p-2 rounded w-98"
               value={contactData.phone}
               onChange={handleChange}
             />
           </div>
 
           <div>
-            <label>City</label>
+            <label>City:</label>
             <input
               type="text"
               name="city"
-              className="border-2"
+              className="border-2  border-gray-500 ms-5   p-2 rounded w-98"
               value={contactData.city}
               onChange={handleChange}
             />
           </div>
 
           <div>
-            <label>Subject</label>
+            <label>Subject:</label>
             <input
               type="text"
               name="subject"
-              className="border-2"
+              className="border-2  border-gray-500 ms-1  p-2 rounded w-98"
               value={contactData.subject}
               onChange={handleChange}
             />
           </div>
 
           <div>
-            <label>Religion</label>
+            <label>Religion:</label>
             <select
               name="religion"
-              className="border-2"
+              className="border-2  border-gray-500 ms-2   p-2 rounded w-100"
               value={contactData.religion}
               onChange={handleChange}
             >
@@ -143,9 +142,9 @@ const SignUp = () => {
             </select>
           </div>
 
-          {/* Gender */}
-          <div>
-            <label>Gender</label>
+          
+          <div className=" gap-3 flex">
+            <label>Gender:</label>
             <input
               type="radio"
               name="gender"
@@ -153,7 +152,7 @@ const SignUp = () => {
               className="border-2"
               checked={contactData.gender === "male"}
               onChange={handleChange}
-            />{" "}
+            /> 
             Male
             <input
               type="radio"
@@ -162,7 +161,7 @@ const SignUp = () => {
               className="border-2"
               checked={contactData.gender === "female"}
               onChange={handleChange}
-            />{" "}
+            /> 
             Female
             <input
               type="radio"
@@ -170,13 +169,13 @@ const SignUp = () => {
               value="other"
               checked={contactData.gender === "other"}
               onChange={handleChange}
-            />{" "}
+            /> 
             Other
           </div>
 
          
-          <div>
-            <label>Skills</label>
+          <div className=" gap-3 flex">
+            <label>Skills:</label>
             <input
               type="checkbox"
               name="skill"
@@ -184,7 +183,7 @@ const SignUp = () => {
               className="border-2"
               checked={contactData.skill.includes("html")}
               onChange={handleChange}
-            />{" "}
+            /> 
             HTML
             <input
               type="checkbox"
@@ -193,7 +192,7 @@ const SignUp = () => {
               className="border-2"
               checked={contactData.skill.includes("css")}
               onChange={handleChange}
-            />{" "}
+            /> 
             CSS
             <input
               type="checkbox"
@@ -202,7 +201,7 @@ const SignUp = () => {
               className="border-2"
               checked={contactData.skill.includes("js")}
               onChange={handleChange}
-            />{" "}
+            /> 
             JS
             <input
               type="checkbox"
@@ -211,16 +210,17 @@ const SignUp = () => {
               className="border-2"
               checked={contactData.skill.includes("react")}
               onChange={handleChange}
-            />{" "}
+            /> 
             React
           </div>
 
-          <div>
-            <label>Message</label>
+          <div className=" flex text-center">
+            <label>Message: </label>
             <textarea
               name="message"
               value={contactData.message}
               onChange={handleChange}
+              className=" border-2 border-gray-500 ms-2 p-2   rounded w-100"
             />
           </div>
 
@@ -239,7 +239,7 @@ const SignUp = () => {
             </button>
           </div>
         </form>
-      </div>
+    
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { FcBusinessContact } from "react-icons/fc"; 
+ 
 const Header = () => {
   return (
    <>
@@ -10,7 +10,7 @@ const Header = () => {
             <Link to={"/"} className='text-white text-decoration-none hover:text-blue-500 active:text-amber-300'>Home</Link>
               <Link to={"About"} className='text-white text-decoration-none hover:text-blue-500 active:text-amber-300'>About</Link>
                 <Link to={"Product"} className='text-white text-decoration-none hover:text-blue-500 active:text-amber-300'>Product</Link>
-                  <Link to={"Contact"} className='text-white text-decoration-none flex  hover:text-blue-500 active:text-amber-300 items-center'><FcBusinessContact /> Contact</Link>
+                  <Link to={"Contact"} className='text-white text-decoration-none flex  hover:text-blue-500 active:text-amber-300'>Contact</Link>
                   <Link to={"SingUp"} className='text-white text-decoration-none hover:text-blue-500 active:text-amber-300'>SingUp</Link>
          </div>
      </div>

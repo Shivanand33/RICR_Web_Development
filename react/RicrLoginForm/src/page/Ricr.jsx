@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import toast from "react-hot-toast";
 const Ricr = () => {
   const [loginData, setloginData] = useState({
     fullName: "",
@@ -13,7 +13,7 @@ const Ricr = () => {
     about: "",
     require: "",
   });
-  const [validationError, setValidationError] = useState({})
+  const [validationError, setValidationError] = useState({});
   const handleChange = (e) => {
     const { name, value } = e.target;
     setloginData((prev) => ({
@@ -35,25 +35,21 @@ const Ricr = () => {
       require: "",
     });
   };
-  const validate = () =>{
-// let Error = {}
-
-//   if(loginData.fullName.length < 3) {
-//     Error.fullName = "Name shoud be more the 3 charcthers";
-
-//   }else{
-//            Error.fullName = "Name";
-
-//   }
-// }
-  
+  const validate = () => {
+    // let Error = {}
+    //   if(loginData.fullName.length < 3) {
+    //     Error.fullName = "Name shoud be more the 3 charcthers";
+    //   }else{
+    //            Error.fullName = "Name";
+    //   }
+    // }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!validate()){
-      set
+    if (!validate()) {
+      set;
     }
-     
+
     try {
       console.log("Form Data", loginData);
       toast.sucess("Ragitation Seccsfull");
@@ -65,7 +61,7 @@ const Ricr = () => {
   };
   return (
     <>
-      <div className="text-3xl flex  text-white items-center justify-center font-bold ">
+      <div className="text-3xl flex mt-2 text-white items-center justify-center font-bold ">
         <p className="text-3xl shadow  text-yellow-400  font-bold ">RICR LO</p>
         <p className="shadow text-3xl  text-red-400  font-bold ">GIN F</p>
         <p className="shadow text-3xl  text-green-400  font-bold ">ORM</p>
@@ -73,15 +69,15 @@ const Ricr = () => {
 
       <form
         action=""
-        className="max-w-4xl mx-auto mt-20 bg-sky-100 shadow-xl rounded-xl border p-8"
+        className="max-w-4xl mx-auto mt-5 bg-sky-100 shadow-2xl rounded-xl p-8"
         onSubmit={handleSubmit}
         onReset={handleClearForm}
       >
         <h2 className="text-2xl font-semibold mb-8 text-center">
-          Student Registration Form
+          Student Login Form
         </h2>
-        <div className="grid  gap-6">
-          <div className="flex gap-5">
+        <div className="grid  grid-cols-2  gap-6">
+          <div className="">
             <label htmlFor="fullName">
               Full Name <sup className="text-red-500">*</sup>
             </label>
@@ -92,7 +88,7 @@ const Ricr = () => {
               placeholder="Enter your Name"
               value={loginData.fullName}
               onChange={handleChange}
-              className="  w-100 p-2  border-1 focus:ring-2 focus:outline-red-400 shadow-xl rounded-xl"
+              className="w-full p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition"
             />
           </div>
           <div>
@@ -106,7 +102,7 @@ const Ricr = () => {
               value={loginData.email}
               onChange={handleChange}
               placeholder="Enter your Email"
-              className="border-2 ms-5 w-75 shadow-xl rounded-xl"
+              className="w-full p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition"
             />
           </div>
           <div>
@@ -119,7 +115,7 @@ const Ricr = () => {
               id="dob"
               value={loginData.dob}
               onChange={handleChange}
-              className="border-2 shadow-xl rounded-xl"
+              className="w-full p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition"
             />
           </div>
           <div>
@@ -132,7 +128,7 @@ const Ricr = () => {
                 id=""
                 value={loginData.qualification}
                 onChange={handleChange}
-                className="border-2 shadow-xl rounded-xl"
+                className="w-full p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition"
               >
                 <option value="qualification">---Qualification---</option>
                 <option value="12th">Intermediate</option>
@@ -143,16 +139,16 @@ const Ricr = () => {
             </div>
           </div>
           <div>
-            <div>
-              <label htmlFor="course">
-                Course <sup className="text-red-500">*</sup>
-              </label>
+            <div className="grid">
+              <span>
+                Course <sup className="text-red-500 ">*</sup>
+              </span>  
               <select
                 name="course"
                 id=""
                 value={loginData.course}
                 onChange={handleChange}
-                className="border-2 shadow-xl rounded-xl"
+                className="w-full p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition"
               >
                 <option value="course">---Course---</option>
                 <option value="java">Java</option>
@@ -161,10 +157,10 @@ const Ricr = () => {
                 <option value="dataanalyist">Data Analyist</option>
               </select>
             </div>
-            <div>
+            <div className="mt-6">
               <label htmlFor="timing">
                 Batch Timing <sup className="text-red-500">*</sup>
-              </label>
+              </label> <br />
               <input
                 type="radio"
                 name="batch"
@@ -213,7 +209,7 @@ const Ricr = () => {
                 id="address"
                 value={loginData.address}
                 onChange={handleChange}
-                className="border-2 shadow-xl rounded-xl"
+                className="w-full p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition"
               ></textarea>
             </div>
             <div>
@@ -226,7 +222,7 @@ const Ricr = () => {
                 id="phone"
                 value={loginData.phone}
                 onChange={handleChange}
-                className="border-2 shadow-xl rounded-xl"
+                className="w-full p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition"
               />
             </div>
           </div>
@@ -234,7 +230,7 @@ const Ricr = () => {
             <div className="">
               <label htmlFor="about">
                 How did you hear about us <sup className="text-red-500">*</sup>
-              </label>
+              </label> <br />
               <input
                 type="radio"
                 name="about"
@@ -274,7 +270,7 @@ const Ricr = () => {
             </div>
           </div>
           <div>
-            <div>
+            <div className="">
               <label htmlFor="about">
                 Special Requirements <sup className="text-red-500">*</sup>
               </label>
@@ -284,7 +280,7 @@ const Ricr = () => {
                 id="require"
                 value={loginData.require}
                 onChange={handleChange}
-                className="border-2 shadow-xl rounded-xl"
+                className="w-full p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-green-500 transition"
               ></textarea>
             </div>
           </div>

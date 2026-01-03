@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
-
 const Home = () => {
   return (
 
@@ -17,7 +15,7 @@ const Home = () => {
         <p className='ms-50'>and shopping should be effortless. Discover your new favorites today."</p>
       </div>
          <div className='flex items-center justify-center m-20'>
-        <Link to={"Start"} className="bg-purple-500 hover:bg-green-400 active:bg-purple-500 rounded-xl w-30  text-center text-2xl font-bold text-white">Start</Link>
+        <Link to={"Product"} className="bg-purple-500 hover:bg-green-400 active:bg-purple-500 rounded-xl w-30  text-center text-2xl font-bold text-white">Start</Link>
       </div>
       
     </div>

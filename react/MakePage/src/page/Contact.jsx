@@ -34,15 +34,15 @@ const Contact = () => {
   return (
     <>
       <div className="text-center">
-        <h1 className="text-4xl font-bold">Login Form</h1>
+        <h1 className="text-4xl mt-10 font-bold">Login Form</h1>
         <div className="container">
           <form
           
-            className="shadow-2xl border-2  m-10 w-100 ms-150 grid gap-3 items-center justify-between"
+            className="shadow-2xl rounded-2xl bg-amber-50 m-10 w-100 h-auto ms-150 grid gap-3 items-center justify-baseline"
             onReset={handleClearForm}
             onSubmit={handleSubmit}
           >
-            <div className="">
+            <div className=" flex  mt-2">
               <label htmlFor="fullName">Full Name:</label>
               <input
                 type="text"
@@ -51,12 +51,12 @@ const Contact = () => {
                 value={ContactData.fullName}
                 onChange={handleChange}
                 placeholder="Enter your Name"
-                className="border-2 w-70 ms-5"
+                className="border-2 p-2 border-gray-300 rounded-xl w-70 ms-5"
               />
             </div>
 
-            <div>
-              <label htmlFor="email">Email</label>
+            <div className="flex text-center">
+              <label htmlFor="email">Email:</label>
               <input
                 type="email"
                 name="email"
@@ -64,20 +64,20 @@ const Contact = () => {
                 value={ContactData.email}
                 onChange={handleChange}
                 placeholder="Enter your Email"
-                className="border-2 ms-5 w-75"
+                className="border-2 border-gray-300 p-2 rounded-xl ms-5 w-full"
               />
             </div>
 
-            <div className="flex gap-3 items-center justify-center">
+            <div className="flex gap-3 items-center justify-center m-2">
               <button
                 type="reset"
-                className="bg-red-700  text-2xl text-white rounded"
+                className="bg-red-500  p-2 hover:bg-red-700 active:bg-red-800 text-white rounded-xl"
               >
                 Clear Form
               </button>
               <button
                 type="submit"
-                className="bg-green-700 text-2xl text-white rounded"
+                className="bg-green-500 hover:green-700 active:bg-green-800 p-2  text-white rounded-xl"
               >
                 {isLoading ? "Loading" : "Submit"}
               </button>

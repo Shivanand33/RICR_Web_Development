@@ -1,13 +1,20 @@
- import React, { useState } from "react";
+import React, { useState } from "react";
 import CountryData from "../assets/CountryData.json";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { MdOutlineSwapVert } from "react-icons/md";
 
 const Currency = () => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [fromAmt, setFromAmt] = useState("");
   const [toAmt, setToAmt] = useState("");
+ 
+  const swap = () =>{
+    let temp = from;
+    setFrom(to);
+    setTo(from);
+  };
 
   const Convert = async () => {
     if (!from || !to || !fromAmt) {
@@ -30,7 +37,7 @@ const Currency = () => {
   return (
     <>
       <div className="bg-amber-50 h-screen p-5">
-        <div className="w-3xl bg-white rounded shadow border p-3 mx-auto space-y-5">
+        <div className="w-3xl mt-16 bg-white rounded shadow border p-3 mx-auto space-y-5">
           <div className="grid grid-cols-2 gap-5">
             <div className="flex gap-3 border rounded px-3">
               {from && (
@@ -55,6 +62,12 @@ const Currency = () => {
                   </option>
                 ))}
               </select>
+            </div>
+            <div className="absolute left-1/2 -translate-x-[50%] top-24">
+              <button  className="text-2xl hover:scale-150 hover:duration-300 scale-100 duration-300 hover:text-green-500"
+                onClick={swap}>
+               <MdOutlineSwapVert />
+              </button>
             </div>
 
             <div className="flex gap-3 border rounded px-3">

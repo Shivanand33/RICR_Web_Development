@@ -28,7 +28,6 @@ const Currency = () => {
           .toLowerCase()}.json`
       );
 
-      
       setToAmt(fromAmt*res.data[from.split(" ")[0].toLowerCase()][to.split(" ")[0].toLowerCase()]);
       
     } catch (error) {}
@@ -36,7 +35,7 @@ const Currency = () => {
 
   return (
     <>
-      <div className="bg-amber-50 h-screen p-5">
+      <div className="bg-amber-50  h-screen p-5">
         <div className="w-3xl mt-16 bg-white rounded shadow border p-3 mx-auto space-y-5">
           <div className="grid grid-cols-2 gap-5">
             <div className="flex gap-3 border rounded px-3">

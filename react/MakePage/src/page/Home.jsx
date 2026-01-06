@@ -4,7 +4,7 @@ const Home = () => {
   return (
 
     <>
-    <div className='container border-2 border-black w-300 m-10 ms-40  justify-center'>
+    <div className='container  border-black w-300 m-10 ms-40  justify-center'>
       <div className=''>
         <h1 className='font-bold text-3xl flex items-center justify-center p-3'>Welcome To Mekup Page</h1>
        

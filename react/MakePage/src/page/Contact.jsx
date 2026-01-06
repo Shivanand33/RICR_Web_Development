@@ -42,6 +42,7 @@ const Contact = () => {
             onReset={handleClearForm}
             onSubmit={handleSubmit}
           >
+            
             <div className=" flex  mt-2">
               <label htmlFor="fullName">Full Name:</label>
               <input
@@ -64,7 +65,7 @@ const Contact = () => {
                 value={ContactData.email}
                 onChange={handleChange}
                 placeholder="Enter your Email"
-                className="border-2 border-gray-300 p-2 rounded-xl ms-5 w-full"
+                className="border-2 border-gray-300 p-2 rounded-xl ms-14 w-70"
               />
             </div>
 

@@ -3,11 +3,11 @@ import React from 'react'
 const Header = () => {
   return (
      <>
-     <nav className='bg-white-400 flex items-center p-2 justify-between  bottom-1 border-1  border-gray-300'>
+     <nav className='bg-white-400 flex items-center p-2 justify-between w-full  py-2  bottom-1 border-1  border-gray-300'>
         <div className='text-3xl ms-20 font-bold'>  
-        <span className=' text-yellow-500'>M</span>
-        <span className=' text-red-500'>oo</span>
-        <span className=' text-black-300'>N</span>
+        <span className=' text-yellow-500'>Mon</span>
+        <span className=' text-red-500'>ke</span>
+        <span className=' text-black-300'>y</span>
         </div>
         <div className='me-20 flex gap-2 items-center'>
             <Link to={"/"} className=" text-xl font-semibold">Home</Link>

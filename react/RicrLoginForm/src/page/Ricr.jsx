@@ -52,7 +52,7 @@ const Ricr = () => {
 
     try {
       console.log("Form Data", loginData);
-      toast.sucess("Ragitation Seccsfull");
+      toast.success("Ragitation Seccsfull");
     } catch (error) {
       console.log(error.message);
     } finally {

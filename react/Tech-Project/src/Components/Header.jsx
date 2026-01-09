@@ -4,7 +4,7 @@ const Header = () => {
   return (
      <>
    <nav className="
-  bg-white
+  bg-white 
   flex flex-col md:flex-row
   items-center
   justify-between

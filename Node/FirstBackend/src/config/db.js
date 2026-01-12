@@ -8,7 +8,7 @@ const connectDB = async () => {
       `MongoDb Connected at : ${conn.connection.host}:${conn.connection.port}`
     );
 
-    console.log("MongoDb Connected at :", conn.connection.name);
+    console.log("DataBase Name :", conn.connection.name);
   } catch (error) {
     console.log(error);
     process.exit(1);

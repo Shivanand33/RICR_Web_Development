@@ -68,7 +68,7 @@ const Login = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              Registration
+              Login
             </h1>
             <p className="text-lg text-gray-600">
               You are 1 step away to stop your Cavings
@@ -109,7 +109,7 @@ const Login = () => {
               </div>
 
               {/* Submit Button */}
-              <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
+              <div className="flex gap-4 pt-2 border-t-2 border-gray-200">
                 <button
                   type="reset"
                   className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:scale-100"

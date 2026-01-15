@@ -3,6 +3,6 @@ import { newContact } from '../controllers/publicController.js';
 
 const router = express.Router();
 
-router.post('/newContact' ,newContact);
+router.post('/newcontact' ,newContact);
 
 export default router;

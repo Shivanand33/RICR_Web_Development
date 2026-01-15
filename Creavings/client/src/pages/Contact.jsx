@@ -33,6 +33,8 @@ const Contact = () => {
 
     try {
       const res = await api.post("/public/newContact", formData);
+     
+      
       toast.success(res.data.message);
       handleClearForm();
     } catch (error) {

@@ -33,6 +33,7 @@ const Header = () => {
           >
             Contact
           </Link>
+           
         </div>
         <div className="flex gap-3">
           <button onClick={()=>navigate("/Login")} className="bg-(--color-secondary) py-2 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded ">

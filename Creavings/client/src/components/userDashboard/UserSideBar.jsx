@@ -6,17 +6,18 @@ import { TbTransactionDollar } from "react-icons/tb";
 import { FaHandsHelping } from "react-icons/fa";
 import { FaHamburger } from "react-icons/fa";
 
-const UserSideBar = ({ active, setActive }) => {
-
-  const [open, setOpen] = useState(false);
+const UserSideBar = ({ active, setActive, open, setOpen }) => {
   return (
     <>
       <div className="p-3">
-        <div onClick={() => setOpen(!open)} className="text-xl font-bold flex justify-center items-center gap-2">
-          <FaHamburger /> User Dashboard
+        <div
+          onClick={() => setOpen(!open)}
+          className="text-xl font-bold flex justify-center items-center gap-2"
+        >
+          <FaHamburger className="animate-bounce" /> {open && "User Dashboard"}
         </div>
         <hr />
-         {open && (
+
         <div className="grid justify-center items-center gap-3 p-6  font-semibold">
           <button
             className={`flex gap-3 justify-center items-center hover:bg-gray-100/70 p-3 rounded-xl ${
@@ -26,7 +27,7 @@ const UserSideBar = ({ active, setActive }) => {
             }`}
             onClick={() => setActive("overview")}
           >
-            <MdPieChart /> Overview
+            <MdPieChart /> {open && "Overview"}
           </button>
           <button
             className={`flex gap-3   items-center hover:bg-gray-100/70 p-3 rounded-xl ${
@@ -37,7 +38,7 @@ const UserSideBar = ({ active, setActive }) => {
             onClick={() => setActive("profile")}
           >
             <ImProfile />
-            Profile
+            {open && "Profile"}
           </button>
           <button
             className={`flex gap-3   items-center hover:bg-gray-100/70 p-3 rounded-xl ${
@@ -49,7 +50,7 @@ const UserSideBar = ({ active, setActive }) => {
           >
             {" "}
             <FaShoppingCart />
-            Order
+            {open && "Order"}
           </button>
           <button
             className={`flex gap-3   items-center hover:bg-gray-100/70 p-3 rounded-xl ${
@@ -61,7 +62,7 @@ const UserSideBar = ({ active, setActive }) => {
           >
             {" "}
             <TbTransactionDollar />
-            Transtions
+            {open && "Transtions"}
           </button>
           <button
             className={`flex gap-3   items-center hover:bg-gray-100/70 p-3 rounded-xl ${
@@ -73,11 +74,9 @@ const UserSideBar = ({ active, setActive }) => {
           >
             {" "}
             <FaHandsHelping />
-            HelpDesk
+            {open && " HelpDesk"}
           </button>
-
         </div>
-         )}
       </div>
     </>
   );

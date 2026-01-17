@@ -8,14 +8,16 @@ import UserHelpDesk from "../../components/userDashboard/UserHelpDesk";
 
 const UserDashboard = () => {
   const [active, setActive] = useState("overview");
+  
+    const [open, setOpen] = useState(false);
 
   return (
     <>
       <div className="w-full h-[90vh] flex">
-        <div className="bg-(--color-background) border-green-500 w-1/7">
-          <SideBar active={active} setActive={setActive} />
+        <div className= {`bg-(--color-background) border-green-500v duration-300 ${open ? "w-[18%]" : "w-[4%]"} `}>
+          <SideBar active={active} setActive={setActive} open={open} setOpen={setOpen} />
         </div>
-        <div className="border border-orange-400 w-6/7">
+        <div className="border border-orange-400 duration-300 w-4/4 ">
           {active === "overview" && <UserOverview />}
           {active === "profile" && <UserProfile />}
           {active === "transtion" && <UserTransection />}

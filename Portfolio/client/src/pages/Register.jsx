@@ -75,7 +75,7 @@ const Register = () => {
 
   return (
     <>
-      <div className=" bg-linear-to-br min-h-screen bg-white  ">
+      <div className=" bg-linear-to-br min-h-screen bg-[var(--color-primary)]  ">
         <div className="max-w-96 max-auto">
           <div className="bg-white items-center  shadow-2xl w-full overflow-hidden rounded-2xl">
             <form
@@ -151,7 +151,7 @@ const Register = () => {
                 <button
                   disabled={isLoding}
                   type="submit"
-                  className="bg-green-600 py-2 p-10 rounded-xl text-white hover:bg-green-700 active:bg-green-800"
+                  className="bg-[var(--color-accent)]  py-2 p-10 rounded-xl text-white "
                 >
                   {isLoding ? "Submitting" : "Submit"}
                 </button>

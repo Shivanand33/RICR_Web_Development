@@ -1,9 +1,26 @@
-import React from 'react'
+import dotenv from "dotenv";
+dotenv.config();
 
-const index = () => {
-  return (
-    <div>index</div>
-  )
-}
+import express from "express";
+ 
+import connectDB from "./src/config/db.js"; 
+const app = express();
 
-export default index
+ 
+
+app.use(express.json());
+
+ 
+ 
+
+app.get("/", (req, res) => {
+  console.log("Server is Working");
+});
+
+ 
+
+const port = process.env.Port || 5000;
+app.listen(port, () => {
+  console.log("Server started at Port : ", port);
+  connectDB();
+});

@@ -1,1 +1,11 @@
 @import  'tailwindcss';
+
+:root {
+  --color-primary: #D72638;   /* Primary red */
+  --color-secondary: #3F88C5; /* Blue */
+  --color-accent: #F49D37;    /* Orange */
+  --color-dark: #140F2D;      /* Dark purple/blue */
+  --color-alert: #F22B29;
+   --color-extra: #13003D; 
+   --color-night: #000A21;       /* Alert red */
+}

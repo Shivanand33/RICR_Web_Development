@@ -1,30 +1,38 @@
-import React, { useState } from 'react'
-import { BrowserRouter } from 'react-router';
-import Navbar from './components/Navbar';
-import SearchBar from './components/SearchBar';
-import ProductCard from './components/ProductCard';
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import SearchBar from "./components/SearchBar";
+import ProductCard from "./components/ProductCard";
 
 const App = () => {
   const [allFood, setAllFood] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const feychFood = async () =>{
+  const fetchFood = async () => {
+    if (!search) return;
+
     try {
-      
-      const res = await fetch("")
+      setLoading(true);
+
+      const res = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+      );
+
+      const data = await res.json();
+      setAllFood(data.meals || []); // null check
     } catch (error) {
-      
+      console.error("Error fetching meals:", error);
+      setAllFood([]);
+    } finally {
+      setLoading(false);
     }
-  }
+  };
+
   return (
     <>
-    <BrowserRouter>
-    <Navbar />
-    <SearchBar />
-    <ProductCard />
-    
-    </BrowserRouter>
+      <Navbar />
+      <SearchBar search={search} setSearch={setSearch} fetchFood={fetchFood} />
+      <ProductCard allFood={allFood} loading={loading} />
     </>
   );
 };

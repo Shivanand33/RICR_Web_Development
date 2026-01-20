@@ -4,10 +4,12 @@ import React from 'react'
  import Footer from './Components/Footer';
 import Home from './pages/Home';
 import Register from './pages/Register';
+import { Toaster } from 'react-hot-toast';
 const App = () => {
   return (
     <>
      <BrowserRouter>
+     <Toaster />
      <Header />
      <Routes>
       <Route path='/' element= {<Home/>} />

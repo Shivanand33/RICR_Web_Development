@@ -1,13 +1,14 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
 import image from "../assets/main.jpg";
+import api from "../config/Api.jsx";
+
 
 const Register = () => {
-  const [fromData, setfromdata] = useState({
-    FullName: "",
+  const [formData, setformdata] = useState({
+    fullName: "",
     email: "",
-    phone: "",
+    mobileNumber: "",
     password: "",
     gender: "",
     country: "",
@@ -18,17 +19,17 @@ const Register = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setfromdata((prev) => ({
+    setformdata((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleResetFrom = () => {
-    setfromdata({
-      FullName: "",
+  const handleResetForm = () => {
+    setformdata({
+      fullName: "",
       email: "",
-      phone: "",
+      mobileNumber: "",
       password: "",
       gender: "",
       country: "",
@@ -36,47 +37,59 @@ const Register = () => {
   };
 
   const validate = () => {
-    let Erroe = {};
-    if (!fromData.FullName) {
-      Erroe.FullName = "FullName is requird";
+    let Error = {};
+
+    if (formData.fullName.length < 3) {
+      Error.fullName = "Name should be More Than 3 Characters";
     } else {
-      if (!/^[a-zA-Z ]{2,30}$/.test(fromData.FullName)) {
-        Erroe.FullName = "Only A-Z, a-z and space allowed";
+      if (!/^[A-Za-z ]+$/.test(formData.fullName)) {
+        Error.fullName = "Only Contain A-Z , a-z and space";
       }
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fromData.email)) {
-      Erroe.email = "Invalid email address";
-    }
-    if (!/^[6-9]\d{9}$/.test(fromData.phone)) {
-      Erroe.phone = "Invalid phone number";
-    }
-    setValidationError(Erroe);
 
-    return Object.keys(Erroe).length > 0 ? false : true;
+    if (
+      !/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(
+        formData.email
+      )
+    ) {
+      Error.email = "Use Proper Email Format";
+    }
+
+    if (!/^[6-9]\d{9}$/.test(formData.mobileNumber)) {
+      Error.mobileNumber = "Only Indian Mobile Number allowed";
+    }
+
+    setValidationError(Error);
+
+    return Object.keys(Error).length > 0 ? false : true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
     if (!validate()) {
       setIsLoading(false);
-      toast.error("Please fill the correctly from");
+      toast.error("Fill the Form Correctly");
       return;
     }
 
+    console.log(formData);
+    
+
     try {
-      console.log(fromData);
-      toast.success("Registation Successful");
-      handleResetFrom();
+      const res = await api.post("/auth/register", formData);
+      
+      toast.success(res.data.message);
+      handleResetForm();
     } catch (error) {
       console.log(error);
-
       toast.error(error.message);
     } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
+
 
   return (
     <>
@@ -92,15 +105,15 @@ const Register = () => {
         <div className="relative z-10 flex   h-full">
           <form
             onSubmit={handleSubmit}
-            onReset={handleResetFrom}
+            onReset={handleResetForm}
             className="p-8 rounded-xl ms-30 w-80"
           >
             <h2 className="text-2xl font-bold text-center mb-6">Register</h2>
 
             <input
               type="text"
-              name="FullName"
-              value={fromData.FullName}
+              name="fullName"
+              value={formData.fullName}
               onChange={handleChange}
               placeholder="Fullname"
               required
@@ -110,7 +123,7 @@ const Register = () => {
             <input
               type="email"
               name="email"
-              value={fromData.email}
+              value={formData.email}
               onChange={handleChange}
               placeholder="Email"
               required
@@ -118,9 +131,9 @@ const Register = () => {
             />
             <input
               type="tel"
-              name="phone"
-              id="phone"
-              value={fromData.phone}
+              name="mobileNumber"
+              id="mobileNumber"
+              value={formData.mobileNumber}
               onChange={handleChange}
               placeholder="Mobile Number"
               required
@@ -130,7 +143,7 @@ const Register = () => {
             <input
               type="password"
               name="password"
-              value={fromData.password}
+              value={formData.password}
               onChange={handleChange}
               placeholder="Create Password"
               required
@@ -142,7 +155,7 @@ const Register = () => {
                 name="gender"
                 value="male"
                 id="male"
-                checked={fromData.gender === "male"}
+                checked={formData.gender === "male"}
                 onChange={handleChange}
               />
               <label htmlFor="male">Male</label>
@@ -151,7 +164,7 @@ const Register = () => {
                 name="gender"
                 value="female"
                 id="female"
-                checked={fromData.gender === "female"}
+                checked={formData.gender === "female"}
                 onChange={handleChange}
               />
               <label htmlFor="female">Female</label>
@@ -160,7 +173,7 @@ const Register = () => {
                 name="gender"
                 value="other"
                 id="other"
-                checked={fromData.gender === "other"}
+                checked={formData.gender === "other"}
                 onChange={handleChange}
               />
               <label htmlFor="other">Other</label>
@@ -169,7 +182,7 @@ const Register = () => {
               <select
                 name="country"
                 id="country"
-                value={fromData.country}
+                value={formData.country}
                 onChange={handleChange}
                 className="w-full mb-4  border rounded p-2 border-gray-400 focus:outline-none focus:border-green-500 transition"
               >

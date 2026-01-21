@@ -4,6 +4,7 @@ import React from 'react'
  import Footer from './Components/Footer';
 import Home from './pages/Home';
 import Register from './pages/Register';
+import Login from './pages/Login';
 import { Toaster } from 'react-hot-toast';
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
      <Routes>
       <Route path='/' element= {<Home/>} />
       <Route path='/Register' element={<Register/>}/>
+      <Route path='/Login'  element={<Login/>}/>
 
        
      </Routes>

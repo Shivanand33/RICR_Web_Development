@@ -63,89 +63,89 @@ const Home = () => {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
             <Link className="bg-white py-4 rounded-2xl shadow text-center font-semibold hover:scale-105 transition">
-              {" "}
-              Man{" "}
-            </Link>{" "}
+              
+              Man 
+            </Link> 
             <Link className="bg-white py-4 rounded-2xl shadow text-center font-semibold hover:scale-105 transition">
-              {" "}
-              Woman{" "}
-            </Link>{" "}
+               
+              Woman 
+            </Link> 
             <Link className="bg-white py-4 rounded-2xl shadow text-center font-semibold hover:scale-105 transition">
-              {" "}
-              Kid{" "}
-            </Link>{" "}
+              
+              Kid 
+            </Link> 
             <Link className="bg-white py-4 rounded-2xl shadow text-center font-semibold hover:scale-105 transition">
-              {" "}
-              Electronics{" "}
-            </Link>{" "}
+              
+              Electronics 
+            </Link> 
           </div>
 
           <h2 className="text-3xl font-bold mb-6">Trending Products 🔥</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="container hover:scale-110 duration-1200 transition py-2 mb-4 rounded-2xl grid items-center justify-center shadow-2xl w-85 ">
-              <div className="shadow-xl rounded w-80 h-auto overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+            <div className="container hover:scale-98 duration-75  transition py-2 mb-4 rounded-2xl grid items-center justify-center shadow-2xl w-72 ">
+              <div className="shadow-xl rounded w-64 h-auto overflow-hidden">
                 <img src={pic} alt="" className=" object-cover rounded" />{" "}
               </div>
               <div className="grid items-center justify-center">
-                {" "}
+              
                 <div className="font-bold"></div>
                 <button
                   to={"Product"}
                   className="hover:scale-105 mt-6 px-8 py-2 bg-yellow-600 text-white rounded-xl shadow-lg hover:bg-gray-800 transition duration-300"
                 >
-                  Shop Now{" "}
-                </button>{" "}
+                  Shop Now 
+                </button> 
               </div>
             </div>
-            <div className="container py-2 hover:scale-110 duration-1200 transition mb-4 rounded-2xl grid items-center justify-center shadow-2xl w-85 ">
-              <div className="shadow-xl rounded w-80 h-auto overflow-hidden">
-                {" "}
-                <img src={pic} alt="" className=" object-cover rounded" />{" "}
+            <div className="container py-2  hover:scale-98 duration-75 transition mb-4 rounded-2xl grid items-center justify-center shadow-2xl w-72 ">
+              <div className="shadow-xl rounded w-64 h-auto overflow-hidden">
+                 
+                <img src={pic} alt="" className=" object-cover rounded" /> 
               </div>
               <div className="grid items-center justify-center">
-                {" "}
+                 
                 <div className="font-bold"></div>
                 <button
                   to={"Product"}
                   className="hover:scale-105 mt-6 px-8 py-2 bg-yellow-600 text-white rounded-xl shadow-lg hover:bg-gray-800 transition duration-300"
                 >
-                  Shop Now{" "}
+                  Shop Now 
                 </button>
-              </div>{" "}
-            </div>{" "}
-            <div className="container py-2 hover:scale-110 duration-1200 transition mb-4 rounded-2xl grid items-center justify-center shadow-2xl w-85 ">
-              <div className="shadow-xl rounded w-80 h-auto overflow-hidden">
-                {" "}
-                <img src={pic} alt="" className=" object-cover rounded" />{" "}
+              </div> 
+            </div> 
+            <div className="container py-2  hover:scale-98 duration-75 transition mb-4 rounded-2xl grid items-center justify-center shadow-2xl w-72 ">
+              <div className="shadow-xl rounded w-64 h-auto overflow-hidden">
+               
+                <img src={pic} alt="" className=" object-cover rounded" /> 
               </div>
               <div className="grid items-center justify-center">
-                {" "}
+               
                 <div className="font-bold"></div>
                 <button
                   to={"Product"}
                   className="hover:scale-105 mt-6 px-8 py-2 bg-yellow-600 text-white rounded-xl shadow-lg hover:bg-gray-800 transition duration-300"
                 >
-                  Shop Now{" "}
+                  Shop Now 
                 </button>
-              </div>{" "}
-            </div>{" "}
-            <div className="container py-2 hover:scale-110 duration-1200 transition mb-4 rounded-2xl grid items-center justify-center shadow-2xl w-85 ">
-              <div className="shadow-xl rounded w-80 h-auto overflow-hidden">
-                {" "}
-                <img src={pic} alt="" className=" object-cover rounded" />{" "}
+              </div> 
+            </div> 
+            <div className="container py-2  hover:scale-98 duration-75 transition mb-4 rounded-2xl grid items-center justify-center shadow-2xl w-72 ">
+              <div className="shadow-xl rounded w-64 h-auto overflow-hidden">
+               
+                <img src={pic} alt="" className=" object-cover rounded" /> 
               </div>
               <div className="grid items-center justify-center">
-                {" "}
-                <div className="font-bold"></div>{" "}
+                 
+                <div className="font-bold"></div> 
                 <button
                   to={"Product"}
                   className="hover:scale-105 mt-6 px-8 py-2 bg-yellow-600 text-white rounded-xl shadow-lg hover:bg-gray-800 transition duration-300"
                 >
-                  Shop Now{" "}
+                  Shop Now 
                 </button>
-              </div>{" "}
-            </div>{" "}
+              </div> 
+            </div> 
           </div>
 
           {/* SALE BANNER */}
@@ -161,17 +161,17 @@ const Home = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <Link className="bg-white py-4 rounded-2xl shadow text-center font-semibold hover:scale-105 transition">
               Cod
-            </Link>{" "}
+            </Link> 
             <Link className="bg-white py-4 rounded-2xl shadow text-center font-semibold hover:scale-105 transition">
-              {" "}
+              
               FreeDelivery
-            </Link>{" "}
+            </Link> 
             <Link className="bg-white py-4 rounded-2xl shadow text-center font-semibold hover:scale-105 transition">
               Kid
-            </Link>{" "}
+            </Link> 
             <Link className="bg-white py-4 rounded-2xl shadow text-center font-semibold hover:scale-105 transition">
               Electronic
-            </Link>{" "}
+            </Link> 
           </div>
         </div>
       </section>

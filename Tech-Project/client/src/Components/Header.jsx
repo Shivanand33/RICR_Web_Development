@@ -41,12 +41,21 @@ const Header = () => {
     <Link to="/" className="text-lg font-semibold">
       Home
     </Link>
+    <Link to="/login" className='  text-lg
+        px-4 py-1
+        rounded-full
+        shadow-lg
+        border
+        hover:bg-orange-100
+        transition'>
+    Login
+     </Link>
 
     <Link
       to="/register"
       className="
         text-lg
-        px-4 py-2
+        px-4 py-1
         rounded-full
         shadow-lg
         border

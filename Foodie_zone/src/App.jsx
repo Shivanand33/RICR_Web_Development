@@ -19,7 +19,7 @@ const App = () => {
       );
 
       const data = await res.json();
-      setAllFood(data.meals || []); // null check
+      setAllFood(data.meals || []); 
     } catch (error) {
       console.error("Error fetching meals:", error);
       setAllFood([]);

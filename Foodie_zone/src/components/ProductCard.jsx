@@ -1,10 +1,13 @@
 import React from "react";
+import Lottie from "lottie-react";
+import shiva from "../assets/animation/Confani.json";
+import food from "../assets/animation/Food.json";
 
 const ProductCard = ({ allFood, loading }) => {
-  if (loading) return <h1 className="text-center">Loading...</h1>;
+  if (loading) return <h1 className="text-center"> <Lottie  animationData={shiva}  loop={false} speed={0.5}  className="absolute -top-50 left-50 " /> </h1>;
 
   if (!allFood.length) {
-    return <h1 className="text-center">No results found 😕</h1>;
+    return <h1 className="text-center"><Lottie animationData={food} className="w-full max-w-2xl -top-10 mx-auto sm:w-2xl sm:ms-20 md:ms-40 lg:ms-80 "/></h1>;
   }
 
   return (

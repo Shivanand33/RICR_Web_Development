@@ -11,6 +11,7 @@ const SearchBar = ({ search, setSearch, fetchFood }) => {
         className="bg-gray-200 py-1.5 px-2 w-80 border-2 border-gray-400 rounded-l-lg"
       />
       <button
+          
         onClick={fetchFood}
         className="bg-yellow-100 rounded-r-lg px-5 py-1.5 border-t-2 border-r-2 border-gray-300"
       >

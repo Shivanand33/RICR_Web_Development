@@ -17,7 +17,7 @@ const UserDashboard = () => {
         <div className= {`bg-(--color-background) border-green-500v duration-300 ${open ? "w-[18%]" : "w-[4%]"} `}>
           <SideBar active={active} setActive={setActive} open={open} setOpen={setOpen} />
         </div>
-        <div className="border border-orange-400 duration-300 w-4/4 ">
+        <div className="  border border-orange-400 duration-300 transition-all w-4/4 ">
           {active === "overview" && <UserOverview />}
           {active === "profile" && <UserProfile />}
           {active === "transtion" && <UserTransection />}

@@ -10,15 +10,15 @@ const UserSideBar = ({ active, setActive, open, setOpen }) => {
   return (
     <>
       <div className="p-3">
-        <div
+          <div
           onClick={() => setOpen(!open)}
-          className="text-xl font-bold flex justify-center items-center gap-2"
+          className="text-xl font-bold flex justify-center items-center transition duration-300 gap-2"
         >
-          <FaHamburger className="animate-bounce" /> {open && "User Dashboard"}
+          <FaHamburger /> {open && "User Dashboard"}
         </div>
         <hr />
 
-        <div className="grid justify-center items-center gap-3 p-6  font-semibold">
+        <div className="grid justify-center items-center gap-3 p-6 me-20  font-semibold">
           <button
             className={`flex gap-3 justify-center items-center hover:bg-gray-100/70 p-3 rounded-xl ${
               active === "overview"

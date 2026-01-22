@@ -6,7 +6,7 @@ import { useAuth } from "../context/authContext";
 const Header = () => {
   const {user, isLogin} = useAuth();
   const navigate = useNavigate();
-  // const [open, setOpen] = useState(false);
+ 
 
   return (
     <>
@@ -20,7 +20,7 @@ const Header = () => {
         </Link>
         {open && (
           <div
-            // onClick={() => setOpen(!open)}
+          
 
             className="flex gap-4"
           >
@@ -47,7 +47,7 @@ const Header = () => {
 
         <div className="flex gap-3">
         {
-          isLogin ? <span className="text-orange-400 me-10 text-3xl font-bold">{user.fullName}☺️</span>:
+          isLogin ? <div className="text-red-500 font-bold cursor-pointer " onClick={()=> navigate("/user-dashboard")}>{user.fullName}</div>:
           <>
             <button
             onClick={() => navigate("/Login")}

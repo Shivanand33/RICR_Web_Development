@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuth } from "../../context/authContext";
+import { useAuth } from "../../context/AuthContext";
 import { useState } from "react";
 import EditProfileModal from "./modals/EditProfileModal";
 
@@ -28,25 +28,24 @@ const UserProfile = () => {
               </button>
             </div>
           </div>
-          <hr />
+          <hr/>
           <div className="  grid grid-cols-2  ms-5 mt-5     ">
             <div className="bg-gray-50 p-4 rounded-xl">
               <span className="  text-gray-500">Name:</span>
               <p className="font-bold  ">{user.fullName}</p>
             </div>
             <div className="bg-gray-50 p-4 rounded-xl">
-              <span  className="  text-gray-500">Email:</span>
+              <span className="  text-gray-500">Email:</span>
               <p className="font-bold">{user.email}</p>
             </div>
-            <div  className="bg-gray-50 p-4 rounded-xl" >
-              <span  className="  text-gray-500">Phone:</span>
+            <div className="bg-gray-50 p-4 rounded-xl">
+              <span className="  text-gray-500">Phone:</span>
               <p className="font-bold">{user.mobileNumber}</p>
             </div>
-                <div className="bg-gray-50 p-4 rounded-xl">
+            <div className="bg-gray-50 p-4 rounded-xl">
               <p className=" text-gray-500">Account Status</p>
               <p className="text-lg font-medium text-green-600">Active</p>
             </div>
-            
           </div>
         </div>
       </div>

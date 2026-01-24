@@ -5,13 +5,13 @@ import { genToken } from "../utils/orthToken.js";
 export const UserRegister = async (req, res, next) => {
   try {
     //accept data exist
-    const { fullName, email, mobileNumber, password } = req.body;
-    if (!fullName || !email || !mobileNumber || !password) {
+    const { fullName, email, mobileNumber, password, role } = req.body;
+    if (!fullName || !email || !mobileNumber || !password ||!role) {
       const error = new Error("All feilds reuired");
       error.statusCode = 400;
       return next(error);
     }
-    console.log({ fullName, email, mobileNumber, password });
+    console.log({ fullName, email, mobileNumber, password, role });
     
     //Check for duplicate use before registation
     const existingUser = await User.findOne({ email });
@@ -32,6 +32,7 @@ export const UserRegister = async (req, res, next) => {
       email,
       mobileNumber,
       password: hashPassword,
+      role,
     });
 
     //sand response to frontend

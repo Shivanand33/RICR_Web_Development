@@ -31,9 +31,9 @@ const EditProfileModal = ({ onClose }) => {
   return (
     <>
       <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-100">
-        <div className="bg-white w-5xl max-h-[85vh] overflow-y-auto">
+        <div className="bg-white w-3xl rounded-2xl max-h-[85vh] overflow-y-auto">
           <div className="flex justify-between px-5 py-3 border-b border-gray-300 items-center">
-            <div>EditProfileModal</div>
+            <div className="font-bold">EditProfileModal</div>
             <button
               onClick={() => onClose()}
               className="text-red-600 hover:text-red-900 text-2xl"

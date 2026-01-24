@@ -9,7 +9,7 @@ export const Protect = async (req, res, next) => {
     const tea = jwt.verify(biscut, process.env.JWT_SECRET);
     console.log(tea);
     if (!tea) {
-      const error = new Error("Unauthrozied! Plese login Again");
+      const error = new Error("Unauthrozied! Plese login Again"); 
       error.statusCode = 401;
       return next(error);
     }

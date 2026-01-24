@@ -9,12 +9,14 @@ const Register = () => {
     mobileNumber: "",
     password: "",
     confirmPassword: "",
+    role:"",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [validationError, setValidationError] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -25,6 +27,7 @@ const Register = () => {
       mobileNumber: "",
       password: "",
       confirmPassword: "",
+      role:"",
     });
   };
 
@@ -50,6 +53,10 @@ const Register = () => {
     if (!/^[6-9]\d{9}$/.test(formData.mobileNumber)) {
       Error.mobileNumber = "Only Indian Mobile Number allowed";
     }
+     
+if(!formrole){
+  Error.role="shshhhdhdh";
+}
 
     setValidationError(Error);
 
@@ -105,6 +112,21 @@ const Register = () => {
               {/* Personal Information */}
               <div className="mb-10">
                 <div className="space-y-4">
+                  <div className="flex gap-2 items-center justify-around ">
+                    <div className="flex gap-2 items-center ">
+                      <input type="radio" name="role" id="manager" checked={formData.role === "manager"} value={"manager"} onChange={handleChange} />
+                      <label htmlFor="manager">RestaurentManager</label>
+                    </div>
+                     <div className="flex gap-2 items-center ">
+                      <input type="radio" name="role" id="manager" checked={formData.role === "manager"} value={"manager"} onChange={handleChange} />
+                      <label htmlFor="manager">RestaurentPartner</label>
+                    </div>
+                     <div className="flex gap-2 items-center ">
+                      <input type="radio" name="role" id="manager" checked={formData.role === "manager"} value={"manager"} onChange={handleChange} />
+                      <label htmlFor="manager">Coustumer</label>
+                    </div>
+                  </div>
+                  
                   <div>
                     <input
                       type="text"

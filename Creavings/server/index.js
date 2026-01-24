@@ -3,8 +3,9 @@ dotenv.config();
 
 import express from "express";
 import morgan from "morgan";
-import cors from "cors";
 import cookieParser from 'cookie-parser';
+import cors from "cors";
+ 
 import connectDB from "./src/config/db.js";
 import AuthRouter from "./src/routers/authRouter.js";
 import PublicRouter from "./src/routers/publicRouter.js";
@@ -20,7 +21,7 @@ app.use(morgan("dev"));
 
 app.use("/auth", AuthRouter);
 app.use("/public", PublicRouter);
-app.use("/user",UserRouter);
+app.use("/user", UserRouter);
 
 app.get("/", (req, res) => {
   console.log("Server is Working");
@@ -29,7 +30,7 @@ app.get("/", (req, res) => {
 app.use((err, req, res, next) => {
   const ErrorMessage = err.message || "Internal Server Error";
   const StatusCode = err.statusCode || 500;
-
+  
   res.status(StatusCode).json({ message: ErrorMessage });
 });
 

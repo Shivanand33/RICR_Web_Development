@@ -1,46 +1,46 @@
 import User from "../models/userModel.js";
 
-export const UserUpdate = async (req, res, next) =>{
+export const UserUpdate = async (req, res, next) => {
+  try {
+    //logic here
 
-    try {
+    const { fullName, email, mobileNumber } = req.body;
+    const currentUser = req.user;
 
-        const {fullName, email, mobileNumber} = req.body;
-      
-        const currentUser = req.user;
+    if (!fullName || !email || !mobileNumber) {
+      const error = new Error("All Feilds Required");
+      error.statusCode = 400;
+      return next(error);
+    }
 
-        if(!fullName || !email || !mobileNumber){
-               const error = new Error("All feild requrid");
-            error.statusCode = 400;
-          return  next(error);
-        }
-        // console.log("OldData:",currentUser);
+    console.log("OldData: ", currentUser); //old user data in JSON format
+    //first Way
+    // currentUser.fullName = fullName;
+    // currentUser.email = email;
+    // currentUser.mobileNumber = mobileNumber;
+    // await currentUser.save();
 
-        // currentUser.fullName = fullName;
-        // currentUser.email = email;
-        // currentUser.mobileNumber = mobileNumber;
+    // console.log("NewData:", currentUser);
 
-        // await currentUser.save();
+    //Second Way
 
-
-        // console.log("NewData:", currentUser);
-
-        //second way
-
-        const updateUser = await User.findByIdAndUpdate({_id:currentUser._id},{
-       fullName,
-       email,
-       mobileNumber
-        }, {new: true},
+    const updatedUser = await User.findByIdAndUpdate(
+      { _id: currentUser._id },
+      {
+        fullName,
+        email,
+        mobileNumber,
+      },
+      { new: true },
     );
 
-        res.status(200).json({message:'User updateed Sucessfully', data: updateUser });
-        
+    console.log("Updated User: ", updatedUser);
+    res
+      .status(200)
+      .json({ message: "User Updated Sucessfully", data: updatedUser });
 
-
-
-          console.log("Updating the user");
-
-    } catch (error) {
-        next(error)
-    }
+    console.log("Updating the user");
+  } catch (error) {
+    next(error);
+  }
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import transparant from "../assets/transparant.png";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/authContext";
+import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
   const {user, isLogin} = useAuth();

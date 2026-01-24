@@ -12,8 +12,7 @@ const UserProfile = () => {
         <div className="  justify-between  items-center w-2xl   ">
           <div className="flex">
             <img
-              src=""
-              alt=""
+              
               className="border-2 border-orange-400 w-40 h-40 ms-10  rounded-full   shadow-2xl"
             />
             <div className="m-8 ">

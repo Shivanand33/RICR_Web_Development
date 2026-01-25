@@ -42,24 +42,7 @@ const Header = () => {
             >
               Contact
             </Link>
-             <Link
-              to={"/admindashboard"}
-              className="text-decoration-none text-white hover:text-(--color-accent)"
-            >
-             AdminDashboard
-            </Link>
-             <Link
-              to={"/resturantdashboard"}
-              className="text-decoration-none text-white hover:text-(--color-accent)"
-            >
-              ResturantDashboard
-            </Link>
-             <Link
-              to={"/riderdashboard"}
-              className="text-decoration-none text-white hover:text-(--color-accent)"
-            >
-               RiderDashboard
-            </Link>
+            
           </div>
         )}
 

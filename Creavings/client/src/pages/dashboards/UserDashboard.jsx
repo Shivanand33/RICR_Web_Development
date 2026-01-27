@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import UserSideBar from "../../components/userDashboard/UserSideBar";
-import UserOverview from "../../components/userDashboard/userOverview";
+import UserOverview from "../../components/userDashboard/UserOverview";
 import UserProfile from "../../components/userDashboard/UserProfile";
 import UserOrders from "../../components/userDashboard/UserOrder";
-import UserTransactions from "../../components/userDashboard/userTransection";
+import UserTransactions from "../../components/userDashboard/UserTransection";
 import UserHelpDesk from "../../components/userDashboard/UserHelpDesk";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";

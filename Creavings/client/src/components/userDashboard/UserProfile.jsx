@@ -10,10 +10,11 @@ const UserProfile = () => {
   const { user, setUser } = useAuth();
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
   const [preview, setPreview] = useState("");
- 
 
-  const changePhoto = async () => {
+  const changePhoto = async (photo) => {
     const form_Data = new FormData();
+
+    // console.log("Printing photo", photo);
 
     form_Data.append("image", photo);
     // form_Data.append("imageURL", preview);
@@ -22,8 +23,9 @@ const UserProfile = () => {
       const res = await api.patch("/user/changePhoto", form_Data);
 
       toast.success(res.data.message);
-      
 
+      setUser(res.data.data);
+      sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
     } catch (error) {
       toast.error(error?.response?.data?.message || "Unknown Error");
     }
@@ -68,13 +70,13 @@ const UserProfile = () => {
             </div>
             <div>
               <div className="text-3xl text-(--color-primary) font-bold">
-                {user.fullName ||" User Name"}
+                {user.fullName || "User Name"}
               </div>
               <div className="text-gray-600 text-lg font-semibold">
                 {user.email || "user@example.com"}
               </div>
               <div className="text-gray-600 text-lg font-semibold">
-                {user.mobileNumber || xxxxxxxxxx}
+                {user.mobileNumber || "XXXXXXXXXX"}
               </div>
             </div>
           </div>
@@ -83,7 +85,7 @@ const UserProfile = () => {
               Edit
             </button>
             <button className="px-4 py-2 rounded bg-(--color-secondary) text-white">
-              Reset
+              Reset password
             </button>
           </div>
         </div>

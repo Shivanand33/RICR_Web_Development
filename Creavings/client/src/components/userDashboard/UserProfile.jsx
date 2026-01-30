@@ -5,12 +5,14 @@ import UserImage from "../../assets/userImage.jpg";
 import { FaCamera } from "react-icons/fa";
 import api from "../../config/Api";
 import toast from "react-hot-toast";
+import ResetProfileModal from "./modals/ResetProfileModal";
 
 const UserProfile = () => {
   const { user, setUser } = useAuth();
   console.log(user);
-  
+
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
+  const [isResetProfileModalOpen, setIsResetProfileModalOpen] = useState(false);
   const [preview, setPreview] = useState("");
 
   const changePhoto = async (photo) => {
@@ -38,9 +40,9 @@ const UserProfile = () => {
     const newPhotoURL = URL.createObjectURL(file);
     console.log(newPhotoURL);
     setPreview(newPhotoURL);
-   setTimeout(()=>{
-     changePhoto(file);
-   },5000);
+    setTimeout(() => {
+      changePhoto(file);
+    }, 5000);
   };
 
   return (
@@ -85,10 +87,16 @@ const UserProfile = () => {
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <button onClick={()=>setIsEditProfileModalOpen(true)}   className="px-4 py-2 rounded bg-(--color-secondary) text-white">
+            <button
+              onClick={() => setIsEditProfileModalOpen(true)}
+              className="px-4 py-2 rounded bg-(--color-secondary) text-white"
+            >
               Edit
             </button>
-            <button className="px-4 py-2 rounded bg-(--color-secondary) text-white">
+            <button
+              onClick={() => setIsResetProfileModalOpen(true)}
+              className="px-4 py-2 rounded bg-(--color-secondary) text-white"
+            >
               Reset password
             </button>
           </div>
@@ -97,6 +105,10 @@ const UserProfile = () => {
 
       {isEditProfileModalOpen && (
         <EditProfileModal onClose={() => setIsEditProfileModalOpen(false)} />
+      )}
+
+      {isResetProfileModalOpen && (
+        <ResetProfileModal onClose={() => setIsResetProfileModalOpen(false)} />
       )}
     </>
   );

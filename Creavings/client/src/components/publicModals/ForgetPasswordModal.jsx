@@ -24,10 +24,13 @@ const ForgetPasswordModal = ({ onClose }) => {
       let res;
       if (isOtpSent) {
         if (isOtpVerified) {
-          console.log("OTP already verify now update passsword");
+          res = await api.post("/auth/forgetPasword", formData);
+          toast.success(res.data.message);
           onClose();
         } else {
-          console.log("OTP already Sent now Verify It");
+          res = await api.post("/auth/verifyOtp", formData);
+          toast.success(res.data.message);
+          setIsOtpSent(true);
           setIsOtpVerified(true);
         }
       } else {
@@ -74,7 +77,7 @@ const ForgetPasswordModal = ({ onClose }) => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Enter your registered email"
                   disabled={isOtpSent}
                 />
@@ -90,7 +93,7 @@ const ForgetPasswordModal = ({ onClose }) => {
                     name="otp"
                     value={formData.otp}
                     onChange={handleInputChange}
-                    className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Enter OTP recieved in email"
                     disabled={isOtpVerified}
                   />
@@ -108,7 +111,7 @@ const ForgetPasswordModal = ({ onClose }) => {
                       name="newPassword"
                       value={formData.newPassword}
                       onChange={handleInputChange}
-                      className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Enter your new password"
                     />
                   </div>
@@ -121,7 +124,7 @@ const ForgetPasswordModal = ({ onClose }) => {
                       name="cfNewPassword"
                       value={formData.cfNewPassword}
                       onChange={handleInputChange}
-                      className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                      className="w-full border rounded-md shadow-sm p-2 disabled:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Confirm new password"
                     />
                   </div>
@@ -133,7 +136,7 @@ const ForgetPasswordModal = ({ onClose }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {loading ? (
                   <>

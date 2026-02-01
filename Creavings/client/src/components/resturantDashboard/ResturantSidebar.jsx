@@ -2,7 +2,7 @@ import React from "react";
 import { TbChartTreemap } from "react-icons/tb";
 import { ImProfile } from "react-icons/im";
 import { TiShoppingCart } from "react-icons/ti";
- 
+ import { FaFirstOrderAlt } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdLogout } from "react-icons/md";
 import api from "../../config/Api";
@@ -15,9 +15,11 @@ const RestaurentSidebar  = ({ active, setActive, isCollapsed, setIsCollapsed }) 
   const navigate = useNavigate();
 
   const menuItems = [
-    { key: "overview", title: "Earning", icon: <TbChartTreemap /> },
+    { key: "earning", title: "Earning", icon: <TbChartTreemap /> },
     { key: "profile", title: "Profile", icon: <ImProfile /> },
-    { key: "orders", title: "Menu", icon: <TiShoppingCart /> },
+    { key: "menu", title: "Menu", icon: <TiShoppingCart /> },
+      { key: "order", title: "Order", icon: <FaFirstOrderAlt />},
+      { key: "roports", title: "Reports", icon: <TiShoppingCart /> },
     // {
     //   key: "transactions",
     //   title: "Transactions",

@@ -5,14 +5,14 @@ import UserImage from "../../assets/userImage.jpg";
 import { FaCamera } from "react-icons/fa";
 import api from "../../config/Api";
 import toast from "react-hot-toast";
-import ResetProfileModal from "./modals/ResetProfileModal";
+import ResetPasswordModal from "./modals/ResetPasswordModal";
 
 const RiderProfile = () => {
   const { user, setUser } = useAuth();
   console.log(user);
 
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
-  const [isResetProfileModalOpen, setIsResetProfileModalOpen] = useState(false);
+  const [isResetPasswordModalOpen, setIsResetPasswordModalOpen] = useState(false);
   const [preview, setPreview] = useState("");
 
   const changePhoto = async (photo) => {
@@ -94,7 +94,7 @@ const RiderProfile = () => {
               Edit
             </button>
             <button
-              onClick={() => setIsResetProfileModalOpen(true)}
+              onClick={() => setIsResetPasswordModalOpen(true)}
               className="px-4 py-2 rounded bg-(--color-secondary) text-white"
             >
               Reset password
@@ -107,8 +107,8 @@ const RiderProfile = () => {
         <EditProfileModal onClose={() => setIsEditProfileModalOpen(false)} />
       )}
 
-      {isResetProfileModalOpen && (
-        <ResetProfileModal onClose={() => setIsResetProfileModalOpen(false)} />
+      {isResetPasswordModalOpen && (
+        <ResetPasswordModal  onClose={() => setIsResetPasswordModalOpen(false)} />
       )}
     </>
   );

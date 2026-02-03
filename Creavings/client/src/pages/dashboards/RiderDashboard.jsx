@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import RiderSideBar from "../../components/riderDashboard/RiderSideBar";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import Earnings from "../../components/resturantDashboard/Earnings";
+// import Earnings from "../../components/restaurantDashboard/Earnings";
 
 import RiderProfile from "../../components/riderDashboard/RiderProfile";
 

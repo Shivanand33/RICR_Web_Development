@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-const RestaurentSidebar  = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
+const RestaurantSidebar  = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
   const { setUser, setIsLogin } = useAuth();
   const navigate = useNavigate();
 
@@ -96,4 +96,4 @@ const RestaurentSidebar  = ({ active, setActive, isCollapsed, setIsCollapsed }) 
   );
 };
 
-export default RestaurentSidebar;
+export default RestaurantSidebar;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAuth } from "../../../context/AuthContext";
 import api from "../../../config/Api";
 
-const EditProfileModal = ({ onClose }) => {
+const EditRestaurantProfileModal = ({ onClose }) => {
   const { user, setUser, setIsLogin } = useAuth();
   const [formData, setFormData] = useState({
     fullName: user?.fullName || "",
@@ -13,7 +13,13 @@ const EditProfileModal = ({ onClose }) => {
     address: user?.address || "",
     city: user?.city || "",
     pin: user?.pin || "",
+    restaurantName: user?.restaurantName || "",
+    cuisine: user?.cuisine || "",
     documents: {
+      gst: user?.documents?.gst || "",
+      fssai: user?.documents?.fssai || "",
+      rc: user?.documents?.rc || "",
+      dl: user?.documents?.dl || "",
       uidai: user?.documents?.uidai || "",
       pan: user?.documents?.pan || "",
     },
@@ -61,6 +67,10 @@ const EditProfileModal = ({ onClose }) => {
       newErrors.pin = "PIN code must be 6 digits";
     }
 
+    if (!formData.restaurantName.trim()) {
+      newErrors.restaurantName = "Restaurant name is required";
+    }
+
     if (
       formData.documents.pan &&
       !/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(formData.documents.pan)
@@ -85,7 +95,6 @@ const EditProfileModal = ({ onClose }) => {
       ...formData,
       [name]: value,
     });
-    // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors({ ...errors, [name]: "" });
     }
@@ -99,7 +108,6 @@ const EditProfileModal = ({ onClose }) => {
         [field]: value,
       },
     });
-    // Clear error for this field
     if (errors[field]) {
       setErrors({ ...errors, [field]: "" });
     }
@@ -107,13 +115,7 @@ const EditProfileModal = ({ onClose }) => {
 
   const fetchLocation = (e) => {
     e.preventDefault();
-    console.log("fetchLocation");
     navigator.geolocation.getCurrentPosition((result) => {
-      console.log(
-        "Location Result:",
-        result.coords.latitude,
-        result.coords.longitude,
-      );
       setFormData({
         ...formData,
         geoLocation: {
@@ -159,10 +161,10 @@ const EditProfileModal = ({ onClose }) => {
   return (
     <>
       <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-100">
-        <div className="bg-white w-full max-w-4xl max-h-[70vh] overflow-y-auto rounded-lg shadow-lg">
+        <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg shadow-lg">
           <div className="flex justify-between px-6 py-4 border-b border-gray-300 items-center sticky top-0 bg-white">
             <h2 className="text-xl font-semibold text-gray-800">
-              Edit Profile
+              Edit Restaurant Profile
             </h2>
             <button
               onClick={() => onClose()}
@@ -200,10 +202,10 @@ const EditProfileModal = ({ onClose }) => {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                       errors.fullName ? "border-red-500" : "border-gray-300"
                     }`}
-                    placeholder="Enter your full name"
+                    placeholder="Enter manager name"
                   />
                   {errors.fullName && (
                     <p className="text-red-600 text-xs mt-1">
@@ -237,7 +239,7 @@ const EditProfileModal = ({ onClose }) => {
                     name="mobileNumber"
                     value={formData.mobileNumber}
                     onChange={handleInputChange}
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                       errors.mobileNumber ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="10-digit mobile number"
@@ -257,7 +259,7 @@ const EditProfileModal = ({ onClose }) => {
                     name="gender"
                     value={formData.gender}
                     onChange={handleInputChange}
-                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
@@ -275,7 +277,50 @@ const EditProfileModal = ({ onClose }) => {
                     name="dob"
                     value={formData.dob}
                     onChange={handleInputChange}
-                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Restaurant Information Section */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
+                Restaurant Information
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Restaurant Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="restaurantName"
+                    value={formData.restaurantName}
+                    onChange={handleInputChange}
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                      errors.restaurantName ? "border-red-500" : "border-gray-300"
+                    }`}
+                    placeholder="Enter restaurant name"
+                  />
+                  {errors.restaurantName && (
+                    <p className="text-red-600 text-xs mt-1">
+                      {errors.restaurantName}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Cuisine Type
+                  </label>
+                  <input
+                    type="text"
+                    name="cuisine"
+                    value={formData.cuisine}
+                    onChange={handleInputChange}
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="e.g., Italian, Indian, Chinese"
                   />
                 </div>
               </div>
@@ -296,8 +341,8 @@ const EditProfileModal = ({ onClose }) => {
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
-                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                    placeholder="Enter your address"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter restaurant address"
                   />
                 </div>
 
@@ -311,7 +356,7 @@ const EditProfileModal = ({ onClose }) => {
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
-                      className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+                      className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                         errors.city ? "border-red-500" : "border-gray-300"
                       }`}
                       placeholder="Enter city"
@@ -330,7 +375,7 @@ const EditProfileModal = ({ onClose }) => {
                       name="pin"
                       value={formData.pin}
                       onChange={handleInputChange}
-                      className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+                      className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                         errors.pin ? "border-red-500" : "border-gray-300"
                       }`}
                       placeholder="6-digit PIN"
@@ -352,22 +397,81 @@ const EditProfileModal = ({ onClose }) => {
                       formData.geoLocation.lon !== "N/A"
                         ? "✅"
                         : "❌"}
-                      {console.log(formData)}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Documents Section */}
+            {/* Business Documents Section */}
             <div>
               <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
-                Documents
+                Business Documents
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Aadhaar (UIDAI)
+                    GST Certificate
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.documents.gst}
+                    onChange={(e) =>
+                      handleNestedChange("documents", "gst", e.target.value)
+                    }
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="GST number"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    FSSAI License
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.documents.fssai}
+                    onChange={(e) =>
+                      handleNestedChange("documents", "fssai", e.target.value)
+                    }
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="FSSAI registration number"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    RC (Vehicle Registration)
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.documents.rc}
+                    onChange={(e) =>
+                      handleNestedChange("documents", "rc", e.target.value)
+                    }
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Registration certificate"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Driving License
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.documents.dl}
+                    onChange={(e) =>
+                      handleNestedChange("documents", "dl", e.target.value)
+                    }
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Driving license number"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    UIDAI (Aadhaar)
                   </label>
                   <input
                     type="text"
@@ -375,7 +479,7 @@ const EditProfileModal = ({ onClose }) => {
                     onChange={(e) =>
                       handleNestedChange("documents", "uidai", e.target.value)
                     }
-                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="12-digit UIDAI number"
                   />
                 </div>
@@ -390,7 +494,7 @@ const EditProfileModal = ({ onClose }) => {
                     onChange={(e) =>
                       handleNestedChange("documents", "pan", e.target.value)
                     }
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                       errors.pan ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="PAN number"
@@ -423,7 +527,7 @@ const EditProfileModal = ({ onClose }) => {
                         e.target.value,
                       )
                     }
-                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+                    className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                       errors.upi ? "border-red-500" : "border-gray-300"
                     }`}
                     placeholder="username@bank"
@@ -447,14 +551,14 @@ const EditProfileModal = ({ onClose }) => {
                         e.target.value,
                       )
                     }
-                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Bank account number"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    IFS Code
+                    IFSC Code
                   </label>
                   <input
                     type="text"
@@ -466,8 +570,8 @@ const EditProfileModal = ({ onClose }) => {
                         e.target.value,
                       )
                     }
-                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                    placeholder="IFS code"
+                    className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="IFSC code"
                   />
                 </div>
               </div>
@@ -486,7 +590,7 @@ const EditProfileModal = ({ onClose }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {loading ? (
                   <>
@@ -504,4 +608,4 @@ const EditProfileModal = ({ onClose }) => {
   );
 };
 
-export default EditProfileModal;
+export default EditRestaurantProfileModal;

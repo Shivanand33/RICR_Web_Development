@@ -28,6 +28,8 @@ export const Protect = async (req, res, next) => {
     next(error);
   }
 };
+ 
+//Admin Protect
 
 export const AdminProtect = async (req, res, next) => {
   try {
@@ -41,6 +43,9 @@ export const AdminProtect = async (req, res, next) => {
     next(error);
   }
 };
+
+// Partener Protect
+
 export const PartnerProtect = async (req, res, next) => {
   try {
     if (req.user.role !== "partner") {
@@ -53,6 +58,10 @@ export const PartnerProtect = async (req, res, next) => {
     next(error);
   }
 };
+
+// Manager Protect/
+
+
 export const ManagerProtect = async (req, res, next) => {
   try {
     if (req.user.role !== "manager") {
@@ -67,6 +76,9 @@ export const ManagerProtect = async (req, res, next) => {
     next(error);
   }
 };
+
+//Coustomer Protect
+
 export const CustomerProtect = async (req, res, next) => {
   try {
     if (req.user.role !== "customer") {
@@ -80,6 +92,8 @@ export const CustomerProtect = async (req, res, next) => {
   }
 };
 
+//OTP Protect
+
 export const OtpProtect = async (req, res, next) => {
   try {
     const token = req.cookies.otpToken;
@@ -92,6 +106,8 @@ export const OtpProtect = async (req, res, next) => {
       error.statusCode = 401;
       return next(error);
     }
+    
+//User verified
 
     const verifiedUser = await User.findById(decode.id);
     if (!verifiedUser) {

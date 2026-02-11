@@ -14,6 +14,7 @@ import { ManagerProtect, Protect } from "../middlewares/authMiddleware.js";
 const router = express.Router();
 const upload = multer();
 
+
 router.post(
   "/addMenuItem",
   Protect,
@@ -45,5 +46,7 @@ router.patch(
   ManagerProtect,
   RestaurantResetPassword,
 );
+
+
 
 export default router;

@@ -1,5 +1,6 @@
 import Menu from "../models/menuSchema.js";
 import { UploadMultipleToCloudinary } from "../utils/imageUploader.js";
+import cloudinary from "../config/cloudinary.js";
 
 export const RestaurantAddMenuItem = async (req, res, next) => {
   try {
@@ -350,3 +351,5 @@ export const RestaurantResetPassword = async (req, res, next) => {
     next(error);
   }
 };
+
+ 

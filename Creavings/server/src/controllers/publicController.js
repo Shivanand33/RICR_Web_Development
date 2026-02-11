@@ -48,25 +48,33 @@ export const GetAllRestaurants = async (req, res, next) => {
 export const GetRetaurantMenuData = async (req, res, next) => {
   try {
     const { id, page } = req.params;
-    console.log(page);
+    const pageNum = parseInt(page, 10) || 1;
+    const limit = parseInt(req.query.limit, 10) || 12;
 
     if (!id) {
-      const error = new Error("All feilds required");
+      const error = new Error("Restaurant id required");
       error.statusCode = 400;
       return next(error);
     }
 
-    const restaurantMenuData = await Menu.find({
-      resturantID: id,
-    })
-      .sort({ updatedAt: -1 })
-      .skip(1)
-      .limit(2)
-      .populate("resturantID");
+    const skip = (pageNum - 1) * limit;
 
-    res
-      .status(200)
-      .json({ message: "Menu fetched Sucessfully", data: restaurantMenuData });
+    const filter = { resturantID: id, availability: { $ne: "removed" } };
+
+    const [total, restaurantMenuData] = await Promise.all([
+      Menu.countDocuments(filter),
+      Menu.find(filter)
+        .sort({ updatedAt: -1 })
+        .skip(skip)
+        .limit(limit)
+        .populate("resturantID"),
+    ]);
+
+    res.status(200).json({
+      message: "Menu fetched successfully",
+      data: restaurantMenuData,
+      meta: { total, page: pageNum, limit },
+    });
   } catch (error) {
     next(error);
   }

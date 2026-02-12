@@ -9,6 +9,7 @@ import {
   RestaurantChangePhoto,
   RestaurantResetPassword,
 } from "../controllers/restaurantController.js";
+import { RestaurantRemoveMenuImage } from "../controllers/imageController.js";
 import { ManagerProtect, Protect } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
@@ -45,6 +46,13 @@ router.patch(
   Protect,
   ManagerProtect,
   RestaurantResetPassword,
+);
+
+router.patch(
+  "/menuItem/:id/removeImage",
+  Protect,
+  ManagerProtect,
+  RestaurantRemoveMenuImage,
 );
 
 

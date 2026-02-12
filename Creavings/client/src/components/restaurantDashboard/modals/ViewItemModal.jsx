@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useAuth } from "../../../context/AuthContext";
+import api from "../../../config/Api";
+import toast from "react-hot-toast";
 
 const ViewItemModal = ({ onClose, selectedItem }) => {
-  if (!selectedItem) return null;
+  const { user, role } = useAuth();
+  const [images, setImages] = useState(selectedItem?.images || []);
+  const [removing, setRemoving] = useState(null);
 
-  const images = selectedItem.images || [].slice(0, 5);
+  useEffect(() => {
+    setImages(selectedItem?.images || []);
+  }, [selectedItem]);
+
+  if (!selectedItem) return null;
 
   return (
     <>
@@ -34,13 +43,38 @@ const ViewItemModal = ({ onClose, selectedItem }) => {
                   {images.slice(0, 5).map((image, index) => (
                     <div
                       key={index}
-                      className="w-30 h-30 rounded-lg overflow-hidden bg-gray-100 border border-gray-200 flex items-center justify-center"
+                      className="relative w-30 h-30 rounded-lg overflow-hidden bg-gray-100 border border-gray-200 flex items-center justify-center"
                     >
                       <img
                         src={image.url}
                         alt={`${selectedItem.itemName} - ${index + 1}`}
                         className="w-full h-full object-cover"
                       />
+                      {(role === "manager" || user?._id === selectedItem.resturantID) && (
+                        <button
+                          onClick={async () => {
+                            if (!confirm("Remove this image?")) return;
+                            try {
+                              setRemoving(image.publicID);
+                              const res = await api.patch(
+                                `/restaurant/menuItem/${selectedItem._id}/removeImage`,
+                                { publicID: image.publicID },
+                              );
+                              setImages((prev) => prev.filter((i) => i.publicID !== image.publicID));
+                              toast.success(res.data.message || "Image removed");
+                            } catch (err) {
+                              console.error(err);
+                              toast.error(err.response?.data?.message || "Failed to remove image");
+                            } finally {
+                              setRemoving(null);
+                            }
+                          }}
+                          className="absolute top-2 right-2 bg-black/50 text-white rounded-full p-1 hover:bg-red-600"
+                          disabled={removing === image.publicID}
+                        >
+                          {removing === image.publicID ? "⟳" : "✕"}
+                        </button>
+                      )}
                     </div>
                   ))}
                 </div>

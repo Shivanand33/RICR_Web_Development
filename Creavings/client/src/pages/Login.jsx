@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import ForgetPasswordModal from "../components/publicModals/ForgetPasswordModal";
-import Loading from "../components/Loading";
+// Icons update kiye hain
+import { FaEnvelope, FaLock, FaArrowRight, FaUser } from "react-icons/fa";
 
 const Login = () => {
   const { setUser, setIsLogin, setRole } = useAuth();
-
   const navigate = useNavigate();
 
-  const [isForgetPasswordModelOpen, setIsForgetPasswordModelOpen] =
-    useState(false);
-
+  const [isForgetPasswordModelOpen, setIsForgetPasswordModelOpen] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -36,7 +34,6 @@ const Login = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    console.log(formData);
     try {
       const res = await api.post("/auth/login", formData);
       toast.success(res.data.message);
@@ -44,30 +41,13 @@ const Login = () => {
       setIsLogin(true);
       sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
       handleClearForm();
+      
       switch (res.data.data.role) {
-        case "manager": {
-          setRole("manager");
-          navigate("/resturant-dashboard");
-          break;
-        }
-        case "partner": {
-          setRole("partner");
-          navigate("/rider-dashboard");
-          break;
-        }
-        case "customer": {
-          setRole("customer");
-          navigate("/user-dashboard");
-          break;
-        }
-        case "admin": {
-          setRole("admin");
-          navigate("/admin-dashboard");
-          break;
-        }
-
-        default:
-          break;
+        case "manager": navigate("/resturant-dashboard"); break;
+        case "partner": navigate("/rider-dashboard"); break;
+        case "customer": navigate("/user-dashboard"); break;
+        case "admin": navigate("/admin-dashboard"); break;
+        default: break;
       }
     } catch (error) {
       console.log(error);
@@ -77,97 +57,128 @@ const Login = () => {
     }
   };
 
-  if (isLoading) {
-    return (
-      <div className="w-100 h-100 flex items-center justify-center">
-        <Loading />
-      </div>
-    );
-  }
-
   return (
     <>
-      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 py-6 px-4">
-        <div className="max-w-xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              Welcome Back
-            </h1>
-            {/* <p className="text-lg text-gray-600">
-              You are 1 step away to stop your Cavings
-            </p> */}
-          </div>
+      <div className="min-h-screen flex bg-white">
+        
+        {/* Left Side - Image Section */}
+        <div className="hidden lg:flex lg:w-1/2 relative bg-gray-900">
+           <img 
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+              alt="Delicious Food"
+              className="absolute inset-0 w-full h-full object-cover opacity-60"
+           />
+           <div className="relative z-10 flex flex-col justify-center px-12 text-white">
+              <h1 className="text-5xl font-bold mb-6 leading-tight">Welcome Back to <br/> <span className="text-orange-500">FoodApp</span></h1>
+              <p className="text-xl text-gray-200">Order your favorite meals or manage your restaurant with ease.</p>
+           </div>
+        </div>
 
-          {/* Form Container */}
-          <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
-            <form
-              onSubmit={handleSubmit}
-              onReset={handleClearForm}
-              className="p-8"
-            >
-              {/* Personal Information */}
-              <div className="mb-5">
-                <div className="space-y-4">
+        {/* Right Side - Login Form */}
+        <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-gray-50">
+          <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-8 md:p-10 border border-gray-100">
+            
+            {/* --- ANIMATED ICON SECTION START --- */}
+            <div className="flex flex-col items-center justify-center mb-8">
+              <div className="relative group cursor-pointer">
+                {/* Glowing Background Ring */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-pink-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                
+                {/* Main Icon Container */}
+                <div className="relative w-24 h-24 bg-white rounded-full flex items-center justify-center border-4 border-orange-50 shadow-xl transform transition duration-500 hover:scale-105">
+                   <FaUser className="text-5xl text-orange-500 drop-shadow-sm" />
+                </div>
+
+                {/* Floating Status Dot (Animated) */}
+                <div className="absolute bottom-1 right-1 h-6 w-6 bg-green-500 rounded-full border-4 border-white animate-bounce shadow-sm"></div>
+              </div>
+              
+              <h2 className="text-3xl font-bold text-gray-800 mt-4">Welcome Back</h2>
+              <p className="text-gray-400 text-sm">Please login to your account</p>
+            </div>
+            {/* --- ANIMATED ICON SECTION END --- */}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              
+              <div className="space-y-1">
+                <label className="text-sm font-semibold text-gray-600 ml-1">Email Address</label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                    <FaEnvelope />
+                  </div>
                   <input
                     type="email"
                     name="email"
-                    placeholder="Email Address"
+                    placeholder="your@email.com"
                     value={formData.email}
                     onChange={handleChange}
                     required
                     disabled={isLoading}
-                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
+                    className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all"
                   />
+                </div>
+              </div>
 
+              <div className="space-y-1">
+                 <div className="flex justify-between items-center ml-1">
+                    <label className="text-sm font-semibold text-gray-600">Password</label>
+                 </div>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                    <FaLock />
+                  </div>
                   <input
                     type="password"
                     name="password"
+                    placeholder="••••••••"
                     value={formData.password}
-                    placeholder="Password"
                     onChange={handleChange}
                     required
                     disabled={isLoading}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
+                    className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all"
                   />
                 </div>
-                <div className="w-full flex justify-end">
+                <div className="flex justify-end mt-1">
                   <button
-                    className="text-(--color-primary) hover:text-(--color-secondary) cursor-pointer"
                     onClick={(e) => {
                       e.preventDefault();
                       setIsForgetPasswordModelOpen(true);
                     }}
+                    className="text-sm text-orange-600 font-semibold hover:text-orange-700 hover:underline"
                   >
-                    Forget Password?
+                    Forgot Password?
                   </button>
                 </div>
               </div>
 
-              {/* Submit Button */}
-              <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
-                <button
-                  type="reset"
-                  disabled={isLoading}
-                  className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105 disabled:scale-100 disabled:bg-gray-300 disabled:cursor-not-allowed"
-                >
-                  Clear Form
-                </button>
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg disabled:scale-100 disabled:bg-gray-300  disabled:cursor-not-allowed"
-                >
-                  {isLoading ? "loading.." : "Login"}
-                </button>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold py-3.5 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-orange-500/30 flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {isLoading ? (
+                  <>
+                     <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Signing In...
+                  </>
+                ) : (
+                  <>Login <FaArrowRight /></>
+                )}
+              </button>
+
+              <div className="text-center mt-6">
+                <p className="text-gray-500">
+                  Don't have an account?{" "}
+                  <Link to="/register" className="text-orange-600 font-bold hover:underline">
+                    Create Account
+                  </Link>
+                </p>
               </div>
             </form>
           </div>
-
-          {/* Footer Note */}
-          <p className="text-center text-gray-600 mt-8 text-sm">
-            All fields marked are mandatory. We respect your privacy.
-          </p>
         </div>
       </div>
 

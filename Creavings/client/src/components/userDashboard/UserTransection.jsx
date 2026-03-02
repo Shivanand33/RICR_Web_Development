@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react'
 
-const UserTransection = () => {
-  return <div>UserTransection</div>;
-};
+const UserTransections = () => {
+  return (
+    <div>UserTransections</div>
+  )
+}
 
-export default UserTransection;
+export default UserTransections

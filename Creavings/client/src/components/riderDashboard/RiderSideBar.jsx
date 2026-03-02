@@ -2,8 +2,7 @@ import React from "react";
 import { TbChartTreemap } from "react-icons/tb";
 import { ImProfile } from "react-icons/im";
 import { TiShoppingCart } from "react-icons/ti";
-import { TbTransactionRupee } from "react-icons/tb";
-import { RiCustomerService2Fill } from "react-icons/ri";
+import { FaHistory } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdLogout } from "react-icons/md";
 import api from "../../config/Api";
@@ -16,17 +15,10 @@ const RiderSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { key: "overview", title: "Accpect", icon: <TbChartTreemap /> },
+    { key: "overview", title: "Overview", icon: <TbChartTreemap /> },
     { key: "profile", title: "Profile", icon: <ImProfile /> },
-     { key: "map", title: "Map", icon: <ImProfile /> },
-      { key: "dileviry", title: "Delivery", icon: <ImProfile /> },
-    { key: "orders", title: "Orders", icon: <TiShoppingCart /> },
-    {
-      key: "transactions",
-      title: "Transactions",
-      icon: <TbTransactionRupee />,
-    },
-    { key: "helpdesk", title: "Help Desk", icon: <RiCustomerService2Fill /> },
+    { key: "current-order", title: "Current Order", icon: <TiShoppingCart /> },
+    { key: "order-history", title: "Order History", icon: <FaHistory /> },
   ];
 
   const handleLogout = async () => {
@@ -52,11 +44,9 @@ const RiderSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
               onClick={() => setIsCollapsed(!isCollapsed)}
             >
               <GiHamburgerMenu />
-            </button>{" "}
+            </button>
             {!isCollapsed && (
-              <span className="overflow-hidden text-nowrap">
-                Rider Dashboard
-              </span>
+              <span className="overflow-hidden text-nowrap">Rider Dashboard</span>
             )}
           </div>
           <hr />
@@ -68,13 +58,12 @@ const RiderSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
                 ${
                   active === item.key
                     ? "bg-(--color-secondary) text-white"
-                    : "hover:bg-gray-100/70 "
+                    : "hover:bg-gray-100/70"
                 } 
               `}
                 onClick={() => setActive(item.key)}
                 key={idx}
               >
-                {" "}
                 {item.icon}
                 {!isCollapsed && item.title}
               </button>
@@ -87,7 +76,6 @@ const RiderSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
             className="flex gap-3 items-center text-lg ps-2 rounded-xl h-10 w-full text-nowrap overflow-hidden duration-300 hover:bg-red-500 hover:text-white text-red-600"
             onClick={handleLogout}
           >
-            {" "}
             <MdLogout />
             {!isCollapsed && "Logout"}
           </button>

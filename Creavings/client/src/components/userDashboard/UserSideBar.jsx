@@ -1,3 +1,4 @@
+
 import React from "react";
 import { TbChartTreemap } from "react-icons/tb";
 import { ImProfile } from "react-icons/im";
@@ -42,7 +43,7 @@ const UserSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
 
   return (
     <>
-      <div className="p-2 flex flex-col justify-between h-full">
+      <div className="p-2 flex  flex-col justify-between h-full">
         <div>
           <div className="h-10 text-xl font-bold flex gap-5 items-center mb-3">
             <button

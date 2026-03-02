@@ -59,7 +59,7 @@ const UserProfile = () => {
 
   return (
     <>
-      <div className="bg-gray-50 rounded-lg p-6 h-full overflow-y-auto space-y-6">
+      <div className="bg-gray-50 rounded-lg mt-12 p-6 h-full overflow-y-auto space-y-6">
         {/* Header Section with Photo and Basic Info */}
         <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
           <div className="flex gap-6">

@@ -8,13 +8,13 @@ import {
   RestaurantUpdate,
   RestaurantChangePhoto,
   RestaurantResetPassword,
+  GetAllPlacedOrder,
+  RestaurantOrderStatusUpdate
 } from "../controllers/restaurantController.js";
-import { RestaurantRemoveMenuImage } from "../controllers/imageController.js";
 import { ManagerProtect, Protect } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 const upload = multer();
-
 
 router.post(
   "/addMenuItem",
@@ -48,13 +48,12 @@ router.patch(
   RestaurantResetPassword,
 );
 
+router.get("/placedOrders", Protect, ManagerProtect, GetAllPlacedOrder);
+
 router.patch(
-  "/menuItem/:id/removeImage",
+  "/orders/:id/updateorderstatus",
   Protect,
   ManagerProtect,
-  RestaurantRemoveMenuImage,
+  RestaurantOrderStatusUpdate,
 );
-
-
-
 export default router;

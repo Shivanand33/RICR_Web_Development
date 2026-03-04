@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import UserSideBar from "../../components/userDashboard/UserSideBar";
-import UserOverview from "../../components/userDashboard/UserOverview";
+import UserOverview from "../../components/userDashboard/userOverview";
 import UserProfile from "../../components/userDashboard/UserProfile";
 import UserOrders from "../../components/userDashboard/UserOrder";
-import UserTransactions from "../../components/userDashboard/UserTransection";
+import UserTransactions from '../../components/userDashboard/UserTransection';
 import UserHelpDesk from "../../components/userDashboard/UserHelpDesk";
 import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const UserDashboard = () => {
   const { role, isLogin } = useAuth();
+  const ActiveTab = useLocation().state.tab;
   const navigate = useNavigate();
-  const [active, setActive] = useState("overview");
+  const [active, setActive] = useState(ActiveTab || "overview");
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const UserDashboard = () => {
   if (role !== "customer") {
     return (
       <>
-        <div className="p-3 ">
+        <div className="p-3">
           <div className="border rounded shadow p-5 w-4xl mx-auto text-center bg-gray-100">
             <div className="text-5xl text-red-600">
               ⊗

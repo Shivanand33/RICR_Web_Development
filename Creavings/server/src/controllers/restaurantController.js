@@ -1,6 +1,6 @@
 import Menu from "../models/menuSchema.js";
+import Order from "../models/orderModel.js";
 import { UploadMultipleToCloudinary } from "../utils/imageUploader.js";
-import cloudinary from "../config/cloudinary.js";
 
 export const RestaurantAddMenuItem = async (req, res, next) => {
   try {
@@ -56,6 +56,7 @@ export const RestaurantAddMenuItem = async (req, res, next) => {
     next(error);
   }
 };
+
 export const RestaurantEditMenuItem = async (req, res, next) => {
   try {
     const {
@@ -133,8 +134,6 @@ export const GetRestaurantMenuItem = async (req, res, next) => {
   }
 };
 
-
-
 export const RestaurantUpdate = async (req, res, next) => {
   try {
     const {
@@ -156,7 +155,9 @@ export const RestaurantUpdate = async (req, res, next) => {
 
     // Validation for required fields
     if (!fullName || !email || !mobileNumber) {
-      const error = new Error("Full Name, Email, and Mobile Number are required");
+      const error = new Error(
+        "Full Name, Email, and Mobile Number are required",
+      );
       error.statusCode = 400;
       return next(error);
     }
@@ -352,4 +353,61 @@ export const RestaurantResetPassword = async (req, res, next) => {
   }
 };
 
- 
+export const GetAllPlacedOrder = async (req, res, next) => {
+  try {
+    const currentUser = req.user;
+
+    const allOrders = await Order.find({ restaurantId: currentUser._id })
+      .populate("userId")
+      .populate("riderId")
+      .sort({ createdAt: -1 });
+
+    res.status(200).json({
+      message: "All Placed Orders Fetched Successfully",
+      data: allOrders,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const RestaurantOrderStatusUpdate = async (req, res, next) => {
+  try {
+    const resturantID = req.user._id;
+
+    const orderID = req.params.id;
+
+    const NewStatus = req.query.status;
+
+    console.log({ resturantID, orderID, NewStatus });
+
+    if (!NewStatus || !orderID) {
+      const error = new Error("All feilds required");
+      error.statusCode = 400;
+      return next(error);
+    }
+
+    const existingOrder = await Order.findOne({
+      _id: orderID,
+      restaurantId: resturantID,
+    });
+
+    if (!existingOrder) {
+      const error = new Error("Order not found or not accessible");
+      error.statusCode = 404;
+      return next(error);
+    }
+
+    existingOrder.status = NewStatus;
+    await existingOrder.save();
+
+    res
+      .status(200)
+      .json({
+        message: "Order Status Updated Successfully",
+        data: existingOrder,
+      });
+  } catch (error) {
+    next(error);
+  }
+};

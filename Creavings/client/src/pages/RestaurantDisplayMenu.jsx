@@ -60,7 +60,7 @@ const RestaurantDisplayMenu = () => {
   const handleCheckout = () => {
     isLogin && role === "customer"
       ? (localStorage.setItem("cart", JSON.stringify(cart)),
-        navigate("/checkout-page"))
+        navigate("/checkoutpage"))
       : (toast.error("Please Login as Customer"), navigate("/login"));
   };
 
@@ -76,7 +76,7 @@ const RestaurantDisplayMenu = () => {
 
   return (
     <>
-      <div className="w-7xl p-3 rounded shadow mx-auto mt-2 ">
+      <div className="w-7xl  p-3 rounded shadow mx-auto mt-2 ">
         <img
           src={data.photo.url}
           alt=""

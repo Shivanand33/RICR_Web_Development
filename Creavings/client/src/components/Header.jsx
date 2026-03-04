@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import transparant from "../assets/transparant.png"; // Ensure path is correct
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+ 
 import { 
   FaSearch, 
   FaShoppingCart, 
@@ -11,6 +12,7 @@ import {
   FaSignOutAlt, 
   FaTachometerAlt 
 } from "react-icons/fa";
+import UserSideBar from "./userDashboard/UserSideBar";
 
 const Header = () => {
   const { user, isLogin, role, logout } = useAuth(); // Assuming logout function exists in context
@@ -194,10 +196,12 @@ const Header = () => {
           
           {isLogin ? (
               <>
-                <button onClick={handleNavigate} className="flex items-center gap-2 text-gray-800 py-2 hover:text-orange-600">
-                    <FaTachometerAlt /> Dashboard
+                <button onClick={UserSideBar} className="flex items-center gap-2 text-gray-800 py-2 hover:text-orange-600">
+                    <FaTachometerAlt />
+                    {/* <Link to={UserSideBar} onClick={handleNavigate} ></Link> */}
+                     Dashboard
                 </button>
-                <button onClick={handleLogout} className="flex items-center gap-2 text-red-600 py-2">
+                <button onClick={UserSideBar} className="flex items-center gap-2 text-red-600 py-2">
                     <FaSignOutAlt /> Logout
                 </button>
               </>

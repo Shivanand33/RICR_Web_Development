@@ -254,7 +254,7 @@ const CheckoutPage = () => {
                 className="text-2xl font-bold mb-6"
                 style={{ color: "var(--color-primary)" }}
               >
-                Order Summary
+                Order Details
               </h2>
 
               {/* Items List */}

@@ -198,7 +198,7 @@ const Home = () => {
       </section>
 
       {/* Categories / Featured Restaurants */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
+       <section className="py-20 px-4 max-w-7xl mx-auto">
         <div className="flex justify-between items-end mb-12">
           <div>
             <h3 className="text-orange-500 font-bold uppercase tracking-wider mb-2">
@@ -255,7 +255,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Trending Dishes 🔥
+              Trending Dishes 🪄
             </h2>
             <p className="text-gray-400">
               Most ordered items by foodies around you

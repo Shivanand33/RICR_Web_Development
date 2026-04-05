@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
 
-const Contact = () => {
+ const Contact = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",

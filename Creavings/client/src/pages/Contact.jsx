@@ -87,7 +87,7 @@ import api from "../config/Api";
                   <input
                     type="tel"
                     name="mobileNumber"
-                    placeholder="Mobile Number"
+                    placeholder="Mobile"
                     maxLength="10"
                     value={formData.mobileNumber}
                     onChange={handleChange}
